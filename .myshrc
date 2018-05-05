@@ -1,0 +1,68 @@
+# Extra path variables
+export PATH=$PATH:~/bin
+export PATH=$PATH:~/bin/kotlin-native/dist/bin
+export GOPATH=$HOME/Developer/go
+export GOROOT=/usr/local/opt/go/libexec
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
+# Aliases for common *nix commands
+alias l="ls"
+alias sl="ls"
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
+alias vs="vi ~/.myshrc"
+alias rs="source ~/.zshrc"
+alias vedit="vim ~/.vimrc" 
+alias remake="make clean && make"
+
+# TaskWarrior aliases
+alias t="task"
+alias tn="task next"
+alias ta="task add"
+alias td="task delete"
+alias tal="task add priority:L"
+alias tam="task add priority:M"
+alias tah="task add priority:H" 
+
+# TaskWarrior chart aliases
+alias tbd="task burndown.daily"
+alias tbw="task burndown.weekly"
+alias tbm="task burndown.monthly"
+alias tc="task calendar"
+alias ts="task summary"
+
+# TimeWarrior aliases
+alias twa="timew start"
+alias two="timew stop"
+alias tws="timew summary"
+
+# Program aliases
+alias gs="git status"
+alias p2="python2"
+alias p3="python3"
+
+# macOS aliases
+alias oa="open -a"
+alias o="open"
+
+# Extra git aliases
+alias gi="git init"
+
+# Android aliases
+alias pdapk="cp app/build/outputs/apk/debug/app-debug.apk ~/Desktop"
+alias prapk="cp app/release/app-release.apk ~/Desktop/"
+
+# Make directory and go to it
+alias mkgo=". mkgo"
+
+# UMass Lowell specific aliases
+alias ssmer="ssh dglasser@mercury.cs.uml.edu"
+alias sscs="ssh dglasser@cs.uml.edu"
+
+# Aliases to jump to servers
+alias sdoc="ssh -i ~/Developer/pem_keys/generic.pem ubuntu@52.3.99.185"
+alias spill="ssh -i ~/Developer/pem_keys/pizzadog.pem ubuntu@52.91.97.147"
+alias sbos="ssh root@192.241.145.230"

@@ -1,5 +1,6 @@
 # Extra path variables
 export PATH=$PATH:~/bin
+export PATH=$PATH:~/Developer/scripts
 export PATH=$PATH:~/bin/kotlin-native/dist/bin
 export GOPATH=$HOME/Developer/go
 export GOROOT=/usr/local/opt/go/libexec
@@ -44,9 +45,8 @@ alias gs="git status"
 alias p2="python2"
 alias p3="python3"
 
-# macOS aliases
-alias oa="open -a"
-alias o="open"
+alias o="xdg-open"
+alias open="xdg-open"
 
 # Extra git aliases
 alias gi="git init"

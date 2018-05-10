@@ -12,7 +12,7 @@ echo "Cleaning up after upgrades..."
 sudo apt-get autoclean -y && sudo apt-get autoremove -y
 
 echo "Installing standard packages..."
-sudo apt install build-essential exfat-fuse ffmpeg gimp git help2man kdenlive neovim zsh default-jdk taskwarrior scrot -y
+sudo apt install build-essential exfat-fuse ffmpeg gimp git help2man kdenlive neovim zsh default-jdk taskwarrior scrot blueman xss-lock -y
 
 echo "Installing nonstandard packages..."
 
@@ -40,8 +40,8 @@ echo "Setting up dotfiles..."
 git clone https://github.com/DarrienG/dotfiles ~/Developer/dotfiles
 mkdir -p ~/.config/i3
 # i3
-ln -s ~/Developer/dotfiles/i3config ~/.config/i3/config
-ln -s ~/Developer/dotfiles/i3statusconfig ~/.config/i3status/config
+ln -s ~/Developer/dotfiles/i3 ~/.config/i3
+ln -s ~/Developer/dotfiles/i3status ~/.config/i3status
 # Vim
 ln -s ~/Developer/dotfiles/.vim ~/.vim
 ln -s ~/Developer/dotfiles/.vimrc ~/.vimrc

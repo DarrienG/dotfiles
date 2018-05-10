@@ -142,6 +142,24 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
+# Set up display modes
+set $displayMode "Set display mode [p]roductivity [r]elax [m]obile"
+bindsym $mod+x mode $displayMode
+mode $displayMode {
+    bindsym p exec "\
+                ~/.config/i3/scripts/productivity-displays.sh && \
+                mode "default"
+    bindsym r exec "\
+                ~/.config/i3/scripts/relax-display.sh && \
+                mode "default"
+    bindsym m exec "\
+                ~/.config/i3/scripts/mobile-display.sh && \
+                mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
 bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -150,11 +168,15 @@ bar {
         status_command i3status
 }
 
+###############################################################################
+# Begin adding custom startup operations to i3
+###############################################################################
+
 # Set keybindings as desired on startup
 exec xmodmap ~/.Xmodmap
 
-# Start network manager applet on start
-exec --no-startup-id nm-applet
+# Start the applets
+exec --no-startup-id ~/Developer/scripts/applet-start.sh
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -173,3 +195,8 @@ exec xset r rate 300 30
 
 # Make using Jetbrains products not lose focus when typing
 for_window [class="^jetbrains-.+"][window_type=dialog] focus
+
+exec xss-lock -- i3lock -n
+
+# Start bluetooth applet
+exec --no-startup-id sleep 5; blueman

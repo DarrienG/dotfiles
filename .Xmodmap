@@ -1,0 +1,4 @@
+! Remove caps lock, and set it to esc
+clear lock
+keysym Caps_Lock = Escape
+

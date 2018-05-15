@@ -4,9 +4,15 @@ filetype plugin indent on
 colorscheme flattened_light
 
 set tabstop=4
+set shiftwidth=4        " 4 spaces or bust
+
 set expandtab           " Tabs are spaces - woo standards
 set ruler               " Show row and line numbers
+
 set wildmenu            " visual autocomplete for command menu
+                        " Ignore files Vim will never read
+set wildignore+=*.pdf,*.o,*.obj,*.jpg,*.png,*.class
+
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 

@@ -11,13 +11,19 @@ export PATH=$PATH:$GOROOT/bin
 # Aliases for common *nix commands
 alias l="ls"
 alias sl="ls"
+alias rs="source ~/.zshrc"
+alias vedit="vim ~/.vimrc" 
+alias remake="make clean && make"
+
+# Vim aliases
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
 alias vs="vi ~/.myshrc"
-alias rs="source ~/.zshrc"
-alias vedit="vim ~/.vimrc" 
-alias remake="make clean && make"
+
+# Emacs aliases
+alias emacs="emacs -nw"
+alias e="emacs -nw"
 
 # Linux specific
 # bt restart

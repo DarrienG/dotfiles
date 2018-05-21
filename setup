@@ -51,6 +51,9 @@ ln -s ~/.vimrc ~/.config/nvim/init.vim
 # Zsh
 ln -s ~/Developer/dotfiles/.zshrc ~/.zshrc
 ln -s ~/Developer/dotfiles/.myshrc ~/.myshrc
+# Emacs
+ln -s ~/Developer/dotfiles/.emacs.d ~/.emacs.d
+ln -s ~/Developer/dotfiles/.emacs ~/.emacs
 
 echo "Setting up git..."
 git config --global user.email "darrienglasser@outlook.com"

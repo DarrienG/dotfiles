@@ -23,7 +23,7 @@ alias vs="vi ~/.myshrc"
 
 # Emacs aliases
 alias emacs="emacs -nw"
-alias e="emacs -nw"
+alias e="\emacs -nw"
 
 # Linux specific
 # bt restart

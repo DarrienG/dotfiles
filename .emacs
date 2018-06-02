@@ -23,13 +23,21 @@
 ;; Set theme to solarized light
 (load-theme 'solarized t)
 
+;; Add org mode
+(require 'org)
+
+;; Add more arguments for todo org mode
+(setq org-todo-keywords
+  '((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE")))
+
 ;; Customize functionality of Emacs
 ;; Make emacs respect (and sync) copy x11 clipboard
 (setq x-select-enable-clipboard t)
 (setq x-select-enable-primary t)
 
 ;; Set line numbers
-(global-linum-mode t)
+;; Off for now
+;; (global-linum-mode t)
 
 ;; Set line mode
 (global-hl-line-mode 1)
@@ -59,15 +67,8 @@
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (volatile-highlights evil-goggles))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;; Remove Emacs god awful splash screen
+(setq inhibit-splash-screen t)
+
+;; Set initial buffer nothing
+(setq initial-scratch-message nil)

@@ -1,3 +1,4 @@
+
 # i3 config file (v4)
 set $mod Mod4
 
@@ -191,5 +192,7 @@ for_window [class="^jetbrains-.+"][window_type=dialog] focus
 
 exec xss-lock -- i3lock -n
 
-# Start bluetooth applet
-exec --no-startup-id sleep 5; blueman
+# Always start calculator in floating mode
+# If using a calculator other than gnome-calculator, change here
+for_window [class="Gnome-calculator"] floating enable
+

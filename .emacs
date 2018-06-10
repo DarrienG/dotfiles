@@ -9,9 +9,17 @@
 
 (package-initialize)
 
+;; Set up use package
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+;; Require use-package and install packages if they are not installed
+(require 'use-package)
+(setq use-package-always-ensure t)
+
 ;; Make emacs good -- EVIL customization
-(add-to-list 'load-path "~/.emacs.d/evil")
-(require 'evil)
+(use-package evil)
 (evil-mode 1)
 
 ;; Change cursor in EVIL insert mode
@@ -25,26 +33,47 @@
 
 ;; Add org mode
 (require 'org)
+(setq org-return-follows-links t)
+
+;; Add agenda keybindings to org
+(global-set-key "\C-ca" 'org-agenda)
 
 ;; Add more arguments for todo org mode
 (setq org-todo-keywords
-  '((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE")))
+  '((sequence "TODO" "IN-PROGRESS" "DONE")))
+
+;; Set closed time to done when in org mode
+(setq org-log-done 'time)
+
+(defun org-summary-todo (n-done n-not-done)
+  (let (org-log-done org-log-states)   ; turn off logging
+    (org-todo (if (= n-not-done 0) "DONE" "TODO"))))
+
+(add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
+
+;; Emacs without Org mode?? ? oke
+(use-package org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+;; Use org journal
+(use-package org-journal)
+(setq org-journal-dir "~/Documents/journal")
+;; Wrap at 80 for journals (IN-PROGRESS) Doesn't seem to work right now
+(add-hook 'org-journal-hook (lambda ()
+                              ('text-mode-hook 'turn-on-autofill)
+                              (set-fill-column 80)))
 
 ;; Customize functionality of Emacs
 ;; Make emacs respect (and sync) copy x11 clipboard
 (setq x-select-enable-clipboard t)
 (setq x-select-enable-primary t)
 
-;; Set line numbers
-;; Off for now
-;; (global-linum-mode t)
-
 ;; Set line mode
 (global-hl-line-mode 1)
 ;; Just not in the terminal
 (add-hook 'term-mode-hook (lambda ()
-			    (setq-local global-hl-line-mode
-					nil)))
+                            (setq-local global-hl-line-mode
+                                        nil)))
 
 
 
@@ -72,3 +101,18 @@
 
 ;; Set initial buffer nothing
 (setq initial-scratch-message nil)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-agenda-files (quote ("~/Documents/org/todo.org")))
+ '(package-selected-packages
+        (quote
+         (org-journal org-bullets use-package use-package-el-get evil))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

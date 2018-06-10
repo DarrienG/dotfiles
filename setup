@@ -12,7 +12,7 @@ echo "Cleaning up after upgrades..."
 sudo apt-get autoclean -y && sudo apt-get autoremove -y
 
 echo "Installing standard packages..."
-sudo apt install build-essential exfat-fuse ffmpeg gimp git help2man kdenlive neovim zsh default-jdk taskwarrior scrot blueman xss-lock -y
+sudo apt-get install build-essential exfat-fuse ffmpeg gimp git help2man kdenlive neovim zsh default-jdk taskwarrior scrot blueman xss-lock -y
 
 echo "Installing nonstandard packages..."
 
@@ -23,8 +23,8 @@ echo "Installing i3..."
 /usr/lib/apt/apt-helper download-file http://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2018.01.30_all.deb keyring.deb SHA256:baa43dbbd7232ea2b5444cae238d53bebb9d34601cc000e82f11111b1889078a
 dpkg -i ./keyring.deb
 echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" >> /etc/apt/sources.list.d/sur5r-i3.list
-sudo apt update -y
-sudo apt install i3 -y
+sudo apt-get update -y
+sudo apt-get install i3 -y
 
 echo "Setting up basic dirs..."
 mkdir -p ~/Developer/dotfiles

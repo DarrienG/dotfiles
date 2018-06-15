@@ -35,6 +35,17 @@
 (require 'org)
 (setq org-return-follows-links t)
 
+;; Add syntax highlighting to code segments
+(setq org-src-fontify-natively t)
+
+;; Set up babel for languages I care about
+
+(org-babel-do-load-languages 'org-babel-load-languages
+    '(
+        (shell . t)
+    )
+)
+
 ;; Add agenda keybindings to org
 (global-set-key "\C-ca" 'org-agenda)
 
@@ -111,8 +122,18 @@
         (quote
          (org-journal org-bullets use-package use-package-el-get evil))))
 (custom-set-faces
- ;; custom-set-faces was added by Custom.
+ ** MAYBE - ServerProperty
+ Contains properties that each server has.
+ Things like name, and such go here.
+ It's reasonable to assume that we wouldn't even need to add columns if we added her.e.
+ All we'd need to do would be modify a query, and if it returned None, then we'd have our answer.
+ Otherwise, use the location for the steps.
+
+ This would have the added bonus of automatically showing up in `svp info`
+ ** ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(use-package tramp)

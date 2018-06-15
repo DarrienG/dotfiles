@@ -1,2 +1,6 @@
 ./.emacs.d/auto-save-list/*
-./.emacs.d/elpa/*
+./.emacs.d/elpa/
+./.emacs.d/url/
+./.emacs.d/eshell
+./.emacs.d/evil
+./.emacs.d/url

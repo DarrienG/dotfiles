@@ -33,7 +33,11 @@ hi CursorLine term=bold cterm=bold guibg=Grey40
 
 :set mouse=r
 
+<<<<<<< HEAD
 set scrolljump=50       " Use emacs-like scrolling in Vim
+=======
+:set scrolljump=50
+>>>>>>> 6221248ecd944c56ed99f38759f6a066b54111f4
 
 call plug#begin('~/.vim/plugged')
 

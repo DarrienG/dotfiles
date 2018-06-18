@@ -9,6 +9,8 @@ set shiftwidth=4        " 4 spaces or bust
 set expandtab           " Tabs are spaces - woo standards
 set ruler               " Show row and line numbers
 
+set nonu                " No NUMBERS
+
 set wildmenu            " visual autocomplete for command menu
                         " Ignore files Vim will never read
 set wildignore+=*.pdf,*.o,*.obj,*.jpg,*.png,*.class
@@ -34,6 +36,10 @@ hi CursorLine term=bold cterm=bold guibg=Grey40
 :set mouse=r
 
 set scrolljump=-50       " Use emacs-like scrolling in Vim
+
+" Set terminal title to the title of the file
+autocmd BufEnter * let &titlestring = ''.expand("%:t")
+set title
 
 call plug#begin('~/.vim/plugged')
 

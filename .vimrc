@@ -6,6 +6,8 @@ colorscheme flattened_light
 set tabstop=4
 set shiftwidth=4        " 4 spaces or bust
 
+au Filetype dart setl sw=2 sts=2 et
+
 set expandtab           " Tabs are spaces - woo standards
 set ruler               " Show row and line numbers
 
@@ -47,6 +49,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'fatih/vim-go'
 Plug 'udalov/kotlin-vim'
 Plug 'pangloss/vim-javascript'
+Plug 'dart-lang/dart-vim-plugin'
 
 " QOL Vim-wide editor improvements
 Plug 'townk/vim-autoclose'

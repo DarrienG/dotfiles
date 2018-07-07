@@ -46,9 +46,6 @@
     )
 )
 
-;; Other syntax highlighting packages
-(use-package dart-mode)
-
 ;; Add agenda keybindings to org
 (global-set-key "\C-ca" 'org-agenda)
 
@@ -89,9 +86,26 @@
                             (setq-local global-hl-line-mode
                                         nil)))
 
+;; Add number of characters on line to emacs bar
+(add-to-list 'global-mode-string '(" %i"))
 
+;; Syntax highlighting for various other languages
+(use-package dockerfile-mode)
 
-;; Tabs are now 4 spaces. Yay standards...
+;; Auto close parens
+(use-package autopair)
+(autopair-global-mode)
+
+;; Highlighted yank bois
+(use-package evil-goggles
+  :ensure t
+  :config
+  (evil-goggles-mode))
+
+;; Make duration just a liiiittle bit longer
+(setq evil-goggles-duration 0.500)
+
+;; Tabs are now 4 spaces. Yay standards.
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
@@ -99,6 +113,7 @@
 ;; disable auto-save and auto-backup
 (setq auto-save-default nil)
 (setq make-backup-files nil)
+(setq backup-directory-alist `(("." . "/tmp")))
 
 (setq vc-follow-symlinks t)
 
@@ -120,10 +135,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-agenda-files (quote ("~/Documents/org/todo.org")))
+ '(indent-tabs-mode nil)
  '(package-selected-packages
    (quote
-    (dart-mode org-journal org-bullets use-package use-package-el-get evil))))
+    (evil-goggles autopair dockerfile-mode org-journal org-bullets use-package use-package-el-get evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

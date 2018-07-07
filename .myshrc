@@ -24,8 +24,8 @@ alias vim="nvim"
 alias vs="vi ~/.myshrc"
 
 # Emacs aliases
-alias emacs="emacs -nw"
-alias e="\emacs -nw"
+alias emacs="emacsclient -q"
+alias e="emacsclient -q"
 
 # Linux specific
 # bt restart

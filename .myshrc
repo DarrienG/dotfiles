@@ -27,6 +27,8 @@ alias vs="vi ~/.myshrc"
 alias emacs="emacsclient -q"
 alias e="emacsclient -q"
 
+alias kts="kotlinc -script"
+
 # Linux specific
 # bt restart
 alias bsr="sudo /etc/init.d/bluetooth restart"

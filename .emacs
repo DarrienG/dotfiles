@@ -91,6 +91,8 @@
 
 ;; Syntax highlighting for various other languages
 (use-package dockerfile-mode)
+(use-package dart-mode)
+(use-package kotlin-mode)
 
 ;; Auto close parens
 (use-package autopair)
@@ -138,7 +140,7 @@
  '(org-agenda-files (quote ("~/Documents/org/todo.org")))
  '(package-selected-packages
    (quote
-    (evil-goggles autopair dockerfile-mode dart-mode org-journal org-bullets use-package use-package-el-get evil))))
+    (kotlin-mode evil-goggles autopair dockerfile-mode dart-mode org-journal org-bullets use-package use-package-el-get evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

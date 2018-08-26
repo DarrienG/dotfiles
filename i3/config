@@ -196,3 +196,4 @@ exec xss-lock -- i3lock -n
 # If using a calculator other than gnome-calculator, change here
 for_window [class="Gnome-calculator"] floating enable
 
+exec --no-startup-id "\emacs --daemon"

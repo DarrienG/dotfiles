@@ -29,3 +29,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="/usr/local/sbin:$PATH"
 . /usr/local/etc/profile.d/z.sh
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/dglasser/.sdkman"
+[[ -s "/home/dglasser/.sdkman/bin/sdkman-init.sh" ]] && source "/home/dglasser/.sdkman/bin/sdkman-init.sh"

@@ -71,8 +71,9 @@
 (setq org-journal-dir "~/Documents/journal")
 ;; Wrap at 80 for journals (IN-PROGRESS) Doesn't seem to work right now
 (add-hook 'org-journal-hook (lambda ()
-                              ('text-mode-hook 'turn-on-autofill)
-                              (set-fill-column 80)))
+                            ('turn-on-auto-fill)))
+(add-hook 'org-journal-hook (lambda ()
+                            (set-fill-column 80)))
 
 ;; Customize functionality of Emacs
 ;; Make emacs respect (and sync) copy x11 clipboard
@@ -85,6 +86,7 @@
 (add-hook 'term-mode-hook (lambda ()
                             (setq-local global-hl-line-mode
                                         nil)))
+(setq column-number-mode t)
 
 ;; Add number of characters on line to emacs bar
 (add-to-list 'global-mode-string '(" %i"))
@@ -93,6 +95,10 @@
 (use-package dockerfile-mode)
 (use-package dart-mode)
 (use-package kotlin-mode)
+(use-package markdown-mode)
+(use-package helm)
+(use-package lsp-mode)
+
 
 ;; Auto close parens
 (use-package autopair)
@@ -139,8 +145,8 @@
  ;; If there is more than one, they won't work right.
  '(org-agenda-files (quote ("~/Documents/org/todo.org")))
  '(package-selected-packages
-   (quote
-    (kotlin-mode evil-goggles autopair dockerfile-mode dart-mode org-journal org-bullets use-package use-package-el-get evil))))
+        (quote
+         (lsp-mode lsp company company-mode helm markdown-mode kotlin-mode evil-goggles autopair dockerfile-mode dart-mode org-journal org-bullets use-package use-package-el-get evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

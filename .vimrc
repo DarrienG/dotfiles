@@ -60,9 +60,6 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'jceb/vim-orgmode'
 
-" IDE-type enhancements
-Plug 'lifepillar/vim-mucomplete'
-
 " Aesthetic improvements
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -74,10 +71,13 @@ call plug#end()
 " vim-go customizations
 let g:go_fmt_command = "goimports"
 
-" Autocomplete changes
-set completeopt-=preview
-set completeopt+=longest,menuone,noselect
-set shortmess+=c   " Shut off completion messages
-set belloff+=ctrlg " If Vim beeps during completion
-let g:mucomplete#enable_auto_at_startup = 1
+" Patch airline to use more standard unicode glyphs
+" air-line
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
 

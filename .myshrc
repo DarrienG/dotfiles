@@ -1,6 +1,6 @@
 # Extra path variables
 export PATH=$PATH:~/bin
-export PATH=$PATH:~/Developer/scripts
+export PATH=$PATH:~/developer/scripts
 export PATH=$PATH:~/bin/kotlin-native/dist/bin
 # F L U T T E R
 export PATH=$PATH:~/bin/flutter/bin
@@ -32,8 +32,6 @@ alias kts="kotlinc -script"
 # Linux specific
 # bt restart
 alias bsr="sudo /etc/init.d/bluetooth restart"
-# update
-alias upd="sudo apt update -y && sudo apt dist-upgrade -y && sudo apt autoclean -y && sudo apt autoremove -y"
 
 # Program aliases
 alias p2="python2"

@@ -58,12 +58,26 @@ Plug 'machakann/vim-highlightedyank'
 " New modes and Vim interfaces
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
-Plug 'blindFS/vim-taskwarrior'
 Plug 'jceb/vim-orgmode'
+
+" IDE-type enhancements
+Plug 'lifepillar/vim-mucomplete'
+
+" Aesthetic improvements
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 " Dep
 Plug 'tpope/vim-speeddating'
 call plug#end()
 
 " vim-go customizations
 let g:go_fmt_command = "goimports"
+
+" Autocomplete changes
+set completeopt-=preview
+set completeopt+=longest,menuone,noselect
+set shortmess+=c   " Shut off completion messages
+set belloff+=ctrlg " If Vim beeps during completion
+let g:mucomplete#enable_auto_at_startup = 1
 

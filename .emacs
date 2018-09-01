@@ -31,20 +31,15 @@
 ;; Set theme to solarized light
 (load-theme 'solarized t)
 
+(use-package powerline)
+(powerline-center-evil-theme)
+
 ;; Add org mode
 (require 'org)
 (setq org-return-follows-links t)
 
 ;; Add syntax highlighting to code segments
 (setq org-src-fontify-natively t)
-
-;; Set up babel for languages I care about
-
-(org-babel-do-load-languages 'org-babel-load-languages
-    '(
-        (sh . t)
-    )
-)
 
 ;; Add agenda keybindings to org
 (global-set-key "\C-ca" 'org-agenda)
@@ -97,21 +92,11 @@
 (use-package kotlin-mode)
 (use-package markdown-mode)
 (use-package helm)
-(use-package lsp-mode)
 
 
 ;; Auto close parens
 (use-package autopair)
 (autopair-global-mode)
-
-;; Highlighted yank bois
-(use-package evil-goggles
-  :ensure t
-  :config
-  (evil-goggles-mode))
-
-;; Make duration just a liiiittle bit longer
-(setq evil-goggles-duration 0.500)
 
 ;; Tabs are now 4 spaces. Yay standards.
 (setq-default indent-tabs-mode nil)
@@ -145,8 +130,8 @@
  ;; If there is more than one, they won't work right.
  '(org-agenda-files (quote ("~/Documents/org/todo.org")))
  '(package-selected-packages
-        (quote
-         (lsp-mode lsp company company-mode helm markdown-mode kotlin-mode evil-goggles autopair dockerfile-mode dart-mode org-journal org-bullets use-package use-package-el-get evil))))
+   (quote
+    (lsp-mode lsp company company-mode helm markdown-mode kotlin-mode autopair dockerfile-mode dart-mode org-journal org-bullets use-package use-package-el-get evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

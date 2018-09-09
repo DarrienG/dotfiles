@@ -28,10 +28,10 @@ set lazyredraw          " redraw only when we need to.
 hi CursorLine term=bold cterm=bold guibg=Grey40
 
 " Disable Ex mode
-:map Q <Nop>            
+:map Q <Nop>
 
 :nnoremap J <C-e>
-:nnoremap K <C-y> 
+:nnoremap K <C-y>
 
 :tnoremap <Esc> <C-\><C-n>  " remap escape to modal editor in terminal
 
@@ -50,6 +50,9 @@ Plug 'fatih/vim-go'
 Plug 'udalov/kotlin-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'dart-lang/dart-vim-plugin'
+
+" IDE like improvements
+Plug 'w0rp/ale'
 
 " QOL Vim-wide editor improvements
 Plug 'townk/vim-autoclose'
@@ -86,4 +89,14 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
+
+" Ale checking options
+" This will only work if using language servers
+let g:ale_completion_enabled = 1
+" AILLINE :triumph:
+let g:airline#extensions#ale#enabled = 1
+
+let g:ale_kotlin_ktlint_executable = "/usr/bin/ktlint"
+let g:ale_sign_error = "❌"
+let g:ale_sign_warning = "⁂"
 

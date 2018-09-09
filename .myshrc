@@ -1,7 +1,7 @@
 # Extra path variables
 export PATH=$PATH:~/bin
 export PATH=$PATH:~/developer/scripts
-export PATH=$PATH:~/bin/kotlin-native/dist/bin
+export PATH=$PATH:~/bin/kotlin-native/bin
 # F L U T T E R
 export PATH=$PATH:~/bin/flutter/bin
 export GOPATH=$HOME/Developer/go
@@ -43,6 +43,9 @@ alias gi="git init"
 # Android aliases
 alias pdapk="cp app/build/outputs/apk/debug/app-debug.apk ~/Desktop"
 alias prapk="cp app/release/app-release.apk ~/Desktop/"
+
+# JVM aliases
+alias clc="rm -rf *.class META-INF"
 
 # Make directory and go to it
 alias mkgo=". mkgo"

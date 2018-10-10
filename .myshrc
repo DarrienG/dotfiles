@@ -24,8 +24,9 @@ alias vim="nvim"
 alias vs="vi ~/.myshrc"
 
 # Emacs aliases
-alias emacs="emacsclient -q"
-alias e="emacsclient -q"
+alias se="\emacs --daemon"
+alias emacs="emacsclient -qc"
+alias e="emacsclient -qc"
 
 alias kts="kotlinc -script"
 
@@ -39,10 +40,11 @@ alias p3="python3"
 
 # Extra git aliases
 alias gi="git init"
+alias gs="git status"
 
 # Android aliases
-alias pdapk="cp app/build/outputs/apk/debug/app-debug.apk ~/Desktop"
-alias prapk="cp app/release/app-release.apk ~/Desktop/"
+alias pdapk="cp app/build/outputs/apk/debug/app-debug.apk ~/desktop"
+alias prapk="cp app/release/app-release.apk ~/desktop/"
 
 # JVM aliases
 alias clc="rm -rf *.class META-INF"
@@ -55,8 +57,8 @@ alias ssmer="ssh dglasser@mercury.cs.uml.edu"
 alias sscs="ssh dglasser@cs.uml.edu"
 
 # Aliases to jump to servers
-alias sdoc="ssh -i ~/Developer/pem_keys/generic.pem ubuntu@52.3.99.185"
-alias spill="ssh -i ~/Developer/pem_keys/pizzadog.pem ubuntu@52.91.97.147"
+alias sdoc="ssh -i ~/developer/pem_keys/generic.pem ubuntu@52.3.99.185"
+alias spill="ssh -i ~/developer/pem_keys/pizzadog.pem ubuntu@52.91.97.147"
 
 # Apparently you need this if you want to have nested TMUX sessions :anger:
 TMUX=""

@@ -1,4 +1,6 @@
-;; load emacs 24's package system. Add MELPA repository.
+;;; .emacs --- load emacs 24's package system. Add MELPA repository.
+;;; Commentary: Configuration for Emacs
+;;; Code:
 (when (>= emacs-major-version 24)
   (require 'package)
   (add-to-list
@@ -52,7 +54,7 @@
 (setq org-log-done 'time)
 
 (defun org-summary-todo (n-done n-not-done)
-  (let (org-log-done org-log-states)   ; turn off logging
+  (let (org-log-done org-log-states)   ;; turn off logging
     (org-todo (if (= n-not-done 0) "DONE" "TODO"))))
 
 (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
@@ -63,17 +65,17 @@
 
 ;; Use org journal
 (use-package org-journal)
-(setq org-journal-dir "~/Documents/journal")
+(setq org-journal-dir "~/Dropbox/journal")
 ;; Wrap at 80 for journals (IN-PROGRESS) Doesn't seem to work right now
 (add-hook 'org-journal-hook (lambda ()
-                            ('turn-on-auto-fill)))
+                            (turn-on-auto-fill)))
 (add-hook 'org-journal-hook (lambda ()
                             (set-fill-column 80)))
 
 ;; Customize functionality of Emacs
 ;; Make emacs respect (and sync) copy x11 clipboard
-(setq x-select-enable-clipboard t)
-(setq x-select-enable-primary t)
+(setq select-enable-clipboard t)
+(setq select-enable-primary t)
 
 ;; Set line mode
 (global-hl-line-mode 1)
@@ -90,8 +92,16 @@
 (use-package dockerfile-mode)
 (use-package dart-mode)
 (use-package kotlin-mode)
+
 (use-package markdown-mode)
 (use-package helm)
+
+;; Ummm what the fuck Kotlin? The default is 8 ???
+;; I swear they do this to make you configure emacs more
+(setq kotlin-tab-width 4)
+
+;; Better find file :sunglasses:
+(define-key global-map [remap find-file] 'helm-find-files)
 
 (use-package flycheck)
 (use-package flycheck-gradle
@@ -122,6 +132,10 @@
 
 ;; Set default shell for ansi-term
 (setq explicit-shell-file-name "/usr/bin/zsh")
+
+;; Some latex stuff
+(setq TeX-PDF-mode t)
+(add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
 ;; Goodbye and good riddance menu bar and schoolbar
 (menu-bar-mode -1)

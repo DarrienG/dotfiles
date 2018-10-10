@@ -1,6 +1,9 @@
 general {
         colors = true
-        interval = 5
+        interval = 3
+        color_good = "#00FF00"
+        color_bad = "#FF0000"
+        color_degraded = "#FFFF00"
 }
 
 order += "battery all"
@@ -11,10 +14,14 @@ order += "volume master"
 
 battery all {
         format = "%status %percentage"
+        status_chr = "CHARGING⚡"
+        status_bat = "BATTERY⏻ "
+        status_full = "CHARGED⭘ "
+        last_full_capacity = true
 }
 
 tztime local {
-        format = "%m-%d-%Y %H:%M:%S"
+        format = "{%H:%M(%S) | %m/%d/%Y}"
 }
 
 load {

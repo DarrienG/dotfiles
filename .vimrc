@@ -1,4 +1,3 @@
-set number
 syntax on
 filetype plugin indent on
 colorscheme flattened_light
@@ -6,6 +5,7 @@ colorscheme flattened_light
 set tabstop=4
 set shiftwidth=4        " 4 spaces or bust
 
+" Dart is stupid
 au Filetype dart setl sw=2 sts=2 et
 
 set expandtab           " Tabs are spaces - woo standards
@@ -50,9 +50,13 @@ Plug 'fatih/vim-go'
 Plug 'udalov/kotlin-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'dart-lang/dart-vim-plugin'
+Plug 'rust-lang/rust.vim'
+Plug 'wlangstroth/vim-racket'
+Plug 'cespare/vim-toml'
 
 " IDE like improvements
 Plug 'w0rp/ale'
+Plug 'ntpeters/vim-better-whitespace'
 
 " QOL Vim-wide editor improvements
 Plug 'townk/vim-autoclose'
@@ -93,10 +97,10 @@ let g:airline_symbols.whitespace = 'Ξ'
 " Ale checking options
 " This will only work if using language servers
 let g:ale_completion_enabled = 1
+let g:ale_sign_error = "❌"
+let g:ale_sign_warning = "⁂"
 " AILLINE :triumph:
 let g:airline#extensions#ale#enabled = 1
 
 let g:ale_kotlin_ktlint_executable = "/usr/bin/ktlint"
-let g:ale_sign_error = "❌"
-let g:ale_sign_warning = "⁂"
-
+let g:ale_rust_cargo_use_check = 1

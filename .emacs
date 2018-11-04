@@ -21,11 +21,11 @@
 (setq use-package-always-ensure t)
 
 ;; Make EVIL feel more like home
-(use-package evil-numbers
+(use-package evil-numbers)
+;; Make emacs good -- EVIL customization
+(use-package evil
   :init
   (setq evil-want-C-u-scroll t))
-;; Make emacs good -- EVIL customization
-(use-package evil)
 (evil-mode 1)
 
 (define-key evil-normal-state-map (kbd "C-c +") 'evil-numbers/inc-at-pt)

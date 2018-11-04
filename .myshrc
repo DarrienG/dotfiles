@@ -5,7 +5,6 @@ export PATH=$PATH:~/bin/kotlin-native/bin
 # F L U T T E R
 export PATH=$PATH:~/bin/flutter/bin
 export GOPATH=$HOME/Developer/go
-export GOROOT=/usr/local/opt/go/libexec
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
@@ -14,8 +13,10 @@ export PATH=$PATH:$GOROOT/bin
 alias l="ls"
 alias sl="ls"
 alias rs="source ~/.zshrc"
-alias vedit="vim ~/.vimrc" 
+alias vedit="vim ~/.vimrc"
 alias remake="make clean && make"
+alias off="find -L -O3 . -type f -name "
+alias ofd="find -L -O3 . -type d -name "
 
 # Vim aliases
 alias v="nvim"
@@ -25,8 +26,8 @@ alias vs="vi ~/.myshrc"
 
 # Emacs aliases
 alias se="\emacs --daemon"
-alias emacs="emacsclient -qc"
-alias e="emacsclient -qc"
+alias emacs="emacsclient -qt"
+alias e="emacsclient -qt"
 
 alias kts="kotlinc -script"
 

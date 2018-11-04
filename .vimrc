@@ -95,12 +95,14 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
 " Ale checking options
-" This will only work if using language servers
-let g:ale_completion_enabled = 1
 let g:ale_sign_error = "❌"
 let g:ale_sign_warning = "⁂"
+" This will only work if using language servers
+let g:ale_completion_enabled = 1
 " AILLINE :triumph:
 let g:airline#extensions#ale#enabled = 1
 
 let g:ale_kotlin_ktlint_executable = "/usr/bin/ktlint"
 let g:ale_rust_cargo_use_check = 1
+
+let b:ale_fixers = {'kotlin': ['ktlint']}

@@ -43,16 +43,13 @@ set scrolljump=-50       " Use emacs-like scrolling in Vim
 autocmd BufEnter * let &titlestring = ''.expand("%:t")
 set title
 
+" Equivalent of M-x delete-trailing-whitespace
+:nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
+
 call plug#begin('~/.vim/plugged')
 
 " Syntax highlighting and definitions
-Plug 'fatih/vim-go'
-Plug 'udalov/kotlin-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'dart-lang/dart-vim-plugin'
-Plug 'rust-lang/rust.vim'
-Plug 'wlangstroth/vim-racket'
-Plug 'cespare/vim-toml'
+Plug 'sheerun/vim-polyglot'
 
 " IDE like improvements
 Plug 'w0rp/ale'

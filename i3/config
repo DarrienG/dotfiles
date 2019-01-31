@@ -195,3 +195,6 @@ exec xss-lock -- i3lock -n
 for_window [class="Gnome-calculator"] floating enable
 
 exec --no-startup-id "\emacs --daemon"
+
+#exec --no-startup-id feh --bg-scale /usr/share/backgrounds/gnome/Icescape.jpg
+

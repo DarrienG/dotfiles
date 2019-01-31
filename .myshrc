@@ -1,7 +1,7 @@
 # Extra path variables
 export PATH=$PATH:~/bin
 export PATH=$PATH:~/developer/scripts
-export PATH=$PATH:~/bin/kotlin-native/bin
+export PATH=$PATH:~/bin/kotlin-native/dist/bin/
 # F L U T T E R
 export PATH=$PATH:~/bin/flutter/bin
 export GOPATH=$HOME/Developer/go

@@ -20,13 +20,14 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-;; Make EVIL feel more like home
-(use-package evil-numbers)
 ;; Make emacs good -- EVIL customization
 (use-package evil
   :init
-  (setq evil-want-C-u-scroll t))
-(evil-mode 1)
+  (setq evil-want-C-u-scroll t)
+  (evil-mode 1))
+
+;; Make EVIL feel more like home
+(use-package evil-numbers)
 
 (define-key evil-normal-state-map (kbd "C-c +") 'evil-numbers/inc-at-pt)
 (define-key evil-normal-state-map (kbd "C-c -") 'evil-numbers/dec-at-pt)
@@ -124,6 +125,12 @@
 
 (global-flycheck-mode)
 
+(use-package gradle-mode
+  :init
+  (gradle-mode 1))
+
+(use-package groovy-mode)
+
 ;; Auto close parens
 (use-package autopair)
 (autopair-global-mode)
@@ -165,7 +172,7 @@
  '(org-agenda-files (quote ("~/Documents/org/todo.org")))
  '(package-selected-packages
    (quote
-    (evil-numbers flycheck-Gradle flycheck-kotlin flycheck-gradle lsp-mode lsp company company-mode helm markdown-mode kotlin-mode autopair dockerfile-mode dart-mode org-journal org-bullets use-package use-package-el-get evil))))
+    (groovy-mode gradle-mode evil-numbers flycheck-Gradle flycheck-kotlin flycheck-gradle lsp-mode lsp company company-mode helm markdown-mode kotlin-mode autopair dockerfile-mode dart-mode org-journal org-bullets use-package use-package-el-get evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

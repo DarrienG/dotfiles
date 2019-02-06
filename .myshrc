@@ -5,9 +5,14 @@ export PATH=$PATH:~/bin/kotlin-native/dist/bin/
 # F L U T T E R
 export PATH=$PATH:~/bin/flutter/bin
 export GOPATH=$HOME/Developer/go
+
+# Fucking hate Go and GOPATH
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
+
+# Pip user dirs
+export PATH=$PATH:~/.local/bin
 
 # Aliases for common *nix commands
 alias l="ls"

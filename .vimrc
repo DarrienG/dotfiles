@@ -102,4 +102,10 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_kotlin_ktlint_executable = "/usr/bin/ktlint"
 let g:ale_rust_cargo_use_check = 1
 
-let b:ale_fixers = {'kotlin': ['ktlint']}
+let b:ale_fixers = {
+        \'*': ['remove_trailing_lines', 'trim_whitespace'],
+        \'kotlin' : ['ktlint'],
+        \'rust' : ['rustfmt']
+\}
+
+let g:ale_fix_on_save = 1

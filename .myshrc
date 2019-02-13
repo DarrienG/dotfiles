@@ -14,6 +14,9 @@ export PATH=$PATH:$GOROOT/bin
 # Pip user dirs
 export PATH=$PATH:~/.local/bin
 
+# For my boi rust
+export PATH=$PATH:$HOME/.cargo/bin
+
 # Aliases for common *nix commands
 alias l="ls"
 alias sl="ls"

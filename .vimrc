@@ -8,6 +8,10 @@ set shiftwidth=4        " 4 spaces or bust
 " Dart is stupid
 au Filetype dart setl sw=2 sts=2 et
 
+" clang-format likes 2 spaces
+au Filetype c setl sw=2 sts=2 et
+au Filetype c++ setl sw=2 sts=2 et
+
 set expandtab           " Tabs are spaces - woo standards
 set ruler               " Show row and line numbers
 
@@ -105,7 +109,9 @@ let g:ale_rust_cargo_use_check = 1
 let b:ale_fixers = {
         \'*': ['remove_trailing_lines', 'trim_whitespace'],
         \'kotlin' : ['ktlint'],
-        \'rust' : ['rustfmt']
+        \'rust' : ['rustfmt'],
+        \'c++' : ['clang-format'],
+        \'c' : ['clang-format']
 \}
 
 let g:ale_fix_on_save = 1

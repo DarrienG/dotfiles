@@ -4,9 +4,9 @@ export PATH=$PATH:~/developer/scripts
 export PATH=$PATH:~/bin/kotlin-native/dist/bin/
 # F L U T T E R
 export PATH=$PATH:~/bin/flutter/bin
-export GOPATH=$HOME/Developer/go
 
 # Fucking hate Go and GOPATH
+export GOPATH=$HOME/developer/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
@@ -25,6 +25,10 @@ alias vedit="vim ~/.vimrc"
 alias remake="make clean && make"
 alias off="find -L -O3 . -type f -name "
 alias ofd="find -L -O3 . -type d -name "
+alias xclip="xclip -selection clipboard"
+
+# SQL aliases
+alias pgsql="sudo su postgres -c psql"
 
 # Vim aliases
 alias v="nvim"
@@ -41,15 +45,20 @@ alias kts="kotlinc -script"
 
 # Linux specific
 # bt restart
+alias poweroff="systemctl poweroff"
+alias reboot="systemctl reboot"
 alias bsr="sudo /etc/init.d/bluetooth restart"
 
 # Program aliases
+alias python="python3"
 alias p2="python2"
 alias p3="python3"
 
 # Extra git aliases
 alias gi="git init"
 alias gs="git status"
+alias gdh="git diff HEAD^"
+alias glr="git pull --rebase"
 
 # Android aliases
 alias pdapk="cp app/build/outputs/apk/debug/app-debug.apk ~/desktop"
@@ -61,9 +70,11 @@ alias clc="rm -rf *.class META-INF"
 # Make directory and go to it
 alias mkgo=". mkgo"
 
-# UMass Lowell specific aliases
+# SSH aliases and variables
 alias ssmer="ssh dglasser@mercury.cs.uml.edu"
 alias sscs="ssh dglasser@cs.uml.edu"
+PROD="root@67.205.144.62"
+alias sspr="ssh root@67.205.144.62"
 
 # Aliases to jump to servers
 alias sdoc="ssh -i ~/developer/pem_keys/generic.pem ubuntu@52.3.99.185"

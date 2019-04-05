@@ -11,6 +11,9 @@ au Filetype dart setl sw=2 sts=2 et
 " clang-format likes 2 spaces
 au Filetype c setl sw=2 sts=2 et
 au Filetype c++ setl sw=2 sts=2 et
+au Filetype vimwiki setl tw=80 spell
+au Filetype markdown setl tw=80 spell
+
 
 set expandtab           " Tabs are spaces - woo standards
 set ruler               " Show row and line numbers
@@ -54,6 +57,7 @@ call plug#begin('~/.vim/plugged')
 
 " Syntax highlighting and definitions
 Plug 'sheerun/vim-polyglot'
+Plug 'fatih/vim-go'
 
 " IDE like improvements
 Plug 'w0rp/ale'
@@ -63,10 +67,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'townk/vim-autoclose'
 Plug 'machakann/vim-highlightedyank'
 
-" New modes and Vim interfaces
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-notes'
-Plug 'jceb/vim-orgmode'
+Plug 'vimwiki/vimwiki'
 
 " Aesthetic improvements
 Plug 'vim-airline/vim-airline'
@@ -96,7 +97,7 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
 " Ale checking options
-let g:ale_sign_error = "❌"
+let g:ale_sign_error = "✕"
 let g:ale_sign_warning = "⁂"
 " This will only work if using language servers
 let g:ale_completion_enabled = 1
@@ -115,3 +116,11 @@ let b:ale_fixers = {
 \}
 
 let g:ale_fix_on_save = 1
+
+" Vimwiki stuff
+let g:vimwiki_list = [{'path': '~/documents/vimwiki/'}]
+
+" neo section
+if has('nvim')
+    set inccommand=nosplit
+endif

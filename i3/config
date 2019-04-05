@@ -171,7 +171,7 @@ bar {
 exec xmodmap ~/.Xmodmap
 
 # Start the applets
-exec --no-startup-id ~/developer/scripts/applet-start.sh
+exec --no-startup-id /home/darrien/developer/scripts/applet-start.sh
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -188,7 +188,7 @@ exec xset r rate 300 30
 # Make using Jetbrains products not lose focus when typing
 for_window [class="^jetbrains-.+"][window_type=dialog] focus
 
-exec xss-lock -- i3lock -n
+exec xss-lock -- i3lock -n --nofork
 
 # Always start calculator in floating mode
 # If using a calculator other than gnome-calculator, change here
@@ -196,5 +196,4 @@ for_window [class="Gnome-calculator"] floating enable
 
 exec --no-startup-id "\emacs --daemon"
 
-#exec --no-startup-id feh --bg-scale /usr/share/backgrounds/gnome/Icescape.jpg
-
+exec --no-startup-id feh --bg-scale /home/darrien/pictures/walls/debian.jpg

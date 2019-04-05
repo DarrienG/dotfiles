@@ -33,7 +33,7 @@ mkdir -p ~/documents
 echo "Installing brightness utils..."
 git clone https://github.com/haikarainen/light /tmp/light
 cd /tmp/light
-make && sudo make install
+./autogen.sh && ./configure && make && sudo make install
 cd
 
 echo "Setting up dotfiles..."
@@ -68,7 +68,8 @@ echo "sudo apt update -y"
 echo "sudo apt-get install oracle-java8-installer"\n\n
 
 echo "Rocking a Thinkpad? This may be useful"
-echo "https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1722478\n\n"
+echo "GRUB_CMDLINE_LINUX_DEFAULT=\"quiet splash psmouse.synaptics_intertouch=0\""
+echo "Related bug: https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1722478\n\n"
 
 echo "NOTE: You still need to:"
 echo "Switch desktop environments"
@@ -79,4 +80,3 @@ echo "Install Oh my Zsh:"
 echo "sh -c \"$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)\""
 
 echo "Setup complete!"
-

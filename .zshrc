@@ -23,12 +23,13 @@ fi
 
 source ~/.myshrc
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="/usr/local/sbin:$PATH"
 . /usr/share/z/z.sh
+. ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey '^Y' autosuggest-accept
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/dglasser/.sdkman"

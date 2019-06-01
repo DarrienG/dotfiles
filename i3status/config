@@ -7,29 +7,19 @@ general {
 }
 
 order += "battery all"
-order += "disk /"
-order += "load"
 order += "tztime local"
 order += "volume master"
 
 battery all {
         format = "%status %percentage"
         status_chr = "CHARGING⚡"
-        status_bat = "BATTERY⏻ "
-        status_full = "CHARGED⭘ "
+        status_bat = "BATTERY🔋"
+        status_full = "CHARGED💯"
         last_full_capacity = true
 }
 
 tztime local {
         format = "{%H:%M(%S) | %m/%d/%Y}"
-}
-
-load {
-        format = "%1min"
-}
-
-disk "/" {
-        format = "%avail"
 }
 
 volume master {

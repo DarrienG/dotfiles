@@ -36,11 +36,6 @@ alias vi="nvim"
 alias vim="nvim"
 alias vs="vi ~/.myshrc"
 
-# Emacs aliases
-alias se="\emacs --daemon"
-alias emacs="emacsclient -qt"
-alias e="emacsclient -qt"
-
 alias kts="kotlinc -script"
 
 # Linux specific
@@ -58,6 +53,7 @@ alias p3="python3"
 alias gi="git init"
 alias gs="git status"
 alias gdh="git diff HEAD^"
+alias gdhn="git diff HEAD^ --name-only"
 alias glr="git pull --rebase"
 
 # Android aliases

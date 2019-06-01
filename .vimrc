@@ -11,9 +11,10 @@ au Filetype dart setl sw=2 sts=2 et
 " clang-format likes 2 spaces
 au Filetype c setl sw=2 sts=2 et
 au Filetype c++ setl sw=2 sts=2 et
-au Filetype vimwiki setl tw=80 spell
-au Filetype markdown setl tw=80 spell
 
+" Spellchecking and reasonable line limits in texty files
+au Filetype vimwiki setl tw=80 spell spelllang=en
+au Filetype markdown setl tw=80 spell spelllang=en
 
 set expandtab           " Tabs are spaces - woo standards
 set ruler               " Show row and line numbers
@@ -37,6 +38,7 @@ hi CursorLine term=bold cterm=bold guibg=Grey40
 " Disable Ex mode
 :map Q <Nop>
 
+" Scroll down/up without moving the cursor
 :nnoremap J <C-e>
 :nnoremap K <C-y>
 
@@ -105,8 +107,10 @@ let g:ale_completion_enabled = 1
 let g:airline#extensions#ale#enabled = 1
 
 let g:ale_kotlin_ktlint_executable = "/usr/bin/ktlint"
+" Cargo check is faster and built in
 let g:ale_rust_cargo_use_check = 1
 
+" Set some fixers for languages
 let b:ale_fixers = {
         \'*': ['remove_trailing_lines', 'trim_whitespace'],
         \'kotlin' : ['ktlint'],
@@ -115,12 +119,18 @@ let b:ale_fixers = {
         \'c' : ['clang-format']
 \}
 
+" Run Ale fixer if applicable on save
 let g:ale_fix_on_save = 1
 
 " Vimwiki stuff
-let g:vimwiki_list = [{'path': '~/documents/vimwiki/'}]
+let g:vimwiki_list = [{
+            \'path' : '$HOME/documents/vimwiki/',
+            \'path_html':'$HOME/developer/webdev/DarrienG.github.io/extern/',
+            \'auto_export':1
+\}]
 
 " neo section
 if has('nvim')
+    " Visually show find and replace while typing
     set inccommand=nosplit
 endif

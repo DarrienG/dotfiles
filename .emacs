@@ -37,6 +37,7 @@
 
 ;; Theme stuff
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
+(set-face-attribute 'default nil :height 140)
 
 ;; Set theme to solarized light
 (load-theme 'solarized t)

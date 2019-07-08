@@ -2,6 +2,8 @@
 export PATH=$PATH:~/bin
 export PATH=$PATH:~/developer/scripts
 export PATH=$PATH:~/bin/kotlin-native/dist/bin/
+# For linuxbrew
+export PATH=$PATH:~/.linuxbrew/bin
 # F L U T T E R
 export PATH=$PATH:~/bin/flutter/bin
 
@@ -18,8 +20,9 @@ export PATH=$PATH:~/.local/bin
 export PATH=$PATH:$HOME/.cargo/bin
 
 # Aliases for common *nix commands
-alias l="ls"
-alias sl="ls"
+alias l="exa"
+alias sl="exa"
+alias ls="exa"
 alias rs="source ~/.zshrc"
 alias vedit="vim ~/.vimrc"
 alias remake="make clean && make"

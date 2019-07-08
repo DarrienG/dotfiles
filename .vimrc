@@ -15,6 +15,7 @@ au Filetype c++ setl sw=2 sts=2 et
 " Spellchecking and reasonable line limits in texty files
 au Filetype vimwiki setl tw=80 spell spelllang=en
 au Filetype markdown setl tw=80 spell spelllang=en
+au TermOpen * setl ma
 
 set expandtab           " Tabs are spaces - woo standards
 set ruler               " Show row and line numbers
@@ -33,7 +34,7 @@ set lazyredraw          " redraw only when we need to.
 
 " Sets the current line to be highlighted
 :set cursorline
-hi CursorLine term=bold cterm=bold guibg=Grey40
+hi CursorLine term=bold cterm=bold
 
 " Disable Ex mode
 :map Q <Nop>
@@ -108,7 +109,7 @@ let g:airline#extensions#ale#enabled = 1
 
 let g:ale_kotlin_ktlint_executable = "/usr/bin/ktlint"
 " Cargo check is faster and built in
-let g:ale_rust_cargo_use_check = 1
+"let g:ale_rust_cargo_use_check = 1
 
 " Set some fixers for languages
 let b:ale_fixers = {
@@ -118,6 +119,10 @@ let b:ale_fixers = {
         \'c++' : ['clang-format'],
         \'c' : ['clang-format']
 \}
+
+let g:ale_linters = {'rust': ['rls']}
+let g:ale_completion_enabled = 1
+let g:ale_rust_rls_toolchain = 'stable'
 
 " Run Ale fixer if applicable on save
 let g:ale_fix_on_save = 1

@@ -27,7 +27,7 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 export PATH="/usr/local/sbin:$PATH"
-. /usr/share/z/z.sh
+. '/home/darrien/.local/share/zrs/z.sh'
 . ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^Y' autosuggest-accept
 

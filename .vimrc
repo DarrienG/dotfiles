@@ -120,7 +120,7 @@ let b:ale_fixers = {
         \'c' : ['clang-format']
 \}
 
-let g:ale_linters = {'rust': ['rls']}
+let g:ale_linters = {'rust': ['rls'], 'c': ['clangd'], 'c++': ['clangd']}
 let g:ale_completion_enabled = 1
 let g:ale_rust_rls_toolchain = 'stable'
 

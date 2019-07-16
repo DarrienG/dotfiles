@@ -29,9 +29,6 @@
 ;; Make EVIL feel more like home
 (use-package evil-numbers)
 
-(define-key evil-normal-state-map (kbd "C-c +") 'evil-numbers/inc-at-pt)
-(define-key evil-normal-state-map (kbd "C-c -") 'evil-numbers/dec-at-pt)
-
 ;; Change cursor in EVIL insert mode
 (setq-default evil-insert-state-cursor 'bar)
 
@@ -157,7 +154,7 @@
 
 ;; Goodbye and good riddance menu bar and schoolbar
 (menu-bar-mode -1)
-(toggle-scroll-bar -1)
+;;(scroll-bar-mode -1)
 (tool-bar-mode -1)
 
 ;; Remove Emacs god awful splash screen

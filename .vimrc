@@ -1,12 +1,17 @@
+set number
 syntax on
 filetype plugin indent on
 colorscheme flattened_light
 
-set tabstop=4
-set shiftwidth=4        " 4 spaces or bust
+set tabstop=3
+set shiftwidth=3        " :weary-face:
 
-" Dart is stupid
-au Filetype dart setl sw=2 sts=2 et
+autocmd Filetype kotlin setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype yaml.ansible setlocal cursorcolumn
+autocmd Filetype yaml setlocal cursorcolumn
+
+" Burn in hell python
+let g:python_recommended_style = 0
 
 " clang-format likes 2 spaces
 au Filetype c setl sw=2 sts=2 et
@@ -35,13 +40,15 @@ set lazyredraw          " redraw only when we need to.
 " Sets the current line to be highlighted
 :set cursorline
 hi CursorLine term=bold cterm=bold
+" Nvim on F18 has a strange BG property
+if has("nvim")
+    highlight Normal ctermbg=NONE
+    highlight nonText ctermbg=NONE
+    set inccommand=nosplit
+endif
 
 " Disable Ex mode
 :map Q <Nop>
-
-" Scroll down/up without moving the cursor
-:nnoremap J <C-e>
-:nnoremap K <C-y>
 
 :tnoremap <Esc> <C-\><C-n>  " remap escape to modal editor in terminal
 
@@ -59,12 +66,14 @@ set title
 call plug#begin('~/.vim/plugged')
 
 " Syntax highlighting and definitions
-Plug 'sheerun/vim-polyglot'
 Plug 'fatih/vim-go'
+Plug 'sheerun/vim-polyglot'
+let g:polyglot_disabled = ['go']
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'towolf/vim-helm'
 
 " IDE like improvements
 Plug 'w0rp/ale'
-Plug 'ntpeters/vim-better-whitespace'
 
 " QOL Vim-wide editor improvements
 Plug 'townk/vim-autoclose'
@@ -79,6 +88,10 @@ Plug 'vim-airline/vim-airline-themes'
 " Dep
 Plug 'tpope/vim-speeddating'
 call plug#end()
+
+if !has("nvim")
+    let g:airline_theme = "light"
+endif
 
 " vim-go customizations
 let g:go_fmt_command = "goimports"
@@ -99,17 +112,29 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
+let g:ale_rust_rls_toolchain = 'stable'
+
+" Run Ale fixer if applicable on save
+let g:ale_fix_on_save = 1
+
+" Cycle forward on suggestions with tab abd back with shift+tab
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+inoremap <expr> <cr> ((pumvisible())?("\<C-y>"):("\<cr>"))
+
 " Ale checking options
 let g:ale_sign_error = "✕"
 let g:ale_sign_warning = "⁂"
+
 " This will only work if using language servers
 let g:ale_completion_enabled = 1
+set completeopt=menu,menuone,preview,noselect,noinsert
 " AILLINE :triumph:
 let g:airline#extensions#ale#enabled = 1
 
 let g:ale_kotlin_ktlint_executable = "/usr/bin/ktlint"
 " Cargo check is faster and built in
-"let g:ale_rust_cargo_use_check = 1
 
 " Set some fixers for languages
 let b:ale_fixers = {
@@ -117,10 +142,11 @@ let b:ale_fixers = {
         \'kotlin' : ['ktlint'],
         \'rust' : ['rustfmt'],
         \'c++' : ['clang-format'],
-        \'c' : ['clang-format']
+        \'c' : ['clang-format'],
+        \'go': ['goimports']
 \}
 
-let g:ale_linters = {'rust': ['rls'], 'c': ['clangd'], 'c++': ['clangd']}
+let g:ale_linters = {'rust': ['rls'], 'c': ['clangd'], 'c++': ['clangd'], 'go': ['gopls']}
 let g:ale_completion_enabled = 1
 let g:ale_rust_rls_toolchain = 'stable'
 
@@ -133,9 +159,3 @@ let g:vimwiki_list = [{
             \'path_html':'$HOME/developer/webdev/DarrienG.github.io/extern/',
             \'auto_export':1
 \}]
-
-" neo section
-if has('nvim')
-    " Visually show find and replace while typing
-    set inccommand=nosplit
-endif

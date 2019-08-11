@@ -58,6 +58,7 @@ alias gs="git status"
 alias gdh="git diff HEAD^"
 alias gdhn="git diff HEAD^ --name-only"
 alias glr="git pull --rebase"
+alias rebr="git checkout master && git pull --rebase && git checkout - && git rebase -"
 
 # Android aliases
 alias pdapk="cp app/build/outputs/apk/debug/app-debug.apk ~/desktop"

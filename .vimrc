@@ -1,10 +1,10 @@
-set number
+set nonumber
 syntax on
 filetype plugin indent on
-colorscheme flattened_light
+set background=dark
 
-set tabstop=3
-set shiftwidth=3        " :weary-face:
+set tabstop=4
+set shiftwidth=4        " :weary-face:
 
 autocmd Filetype kotlin setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype yaml.ansible setlocal cursorcolumn
@@ -18,8 +18,9 @@ au Filetype c setl sw=2 sts=2 et
 au Filetype c++ setl sw=2 sts=2 et
 
 " Spellchecking and reasonable line limits in texty files
-au Filetype vimwiki setl tw=80 spell spelllang=en
-au Filetype markdown setl tw=80 spell spelllang=en
+au Filetype vimwiki,markdown,tex setl tw=80 spell spelllang=en
+"au Filetype markdown setl tw=80 spell spelllang=en
+"au Filetype markdown setl tw=80 spell spelllang=en
 au TermOpen * setl ma
 
 set expandtab           " Tabs are spaces - woo standards
@@ -65,12 +66,15 @@ set title
 
 call plug#begin('~/.vim/plugged')
 
+" Solarized pls
+Plug 'morhetz/gruvbox'
+
 " Syntax highlighting and definitions
 Plug 'fatih/vim-go'
 Plug 'sheerun/vim-polyglot'
 let g:polyglot_disabled = ['go']
-Plug 'ntpeters/vim-better-whitespace'
 Plug 'towolf/vim-helm'
+Plug 'ntpeters/vim-better-whitespace'
 
 " IDE like improvements
 Plug 'w0rp/ale'
@@ -88,6 +92,8 @@ Plug 'vim-airline/vim-airline-themes'
 " Dep
 Plug 'tpope/vim-speeddating'
 call plug#end()
+
+colorscheme gruvbox
 
 if !has("nvim")
     let g:airline_theme = "light"
@@ -129,7 +135,10 @@ let g:ale_sign_warning = "⁂"
 
 " This will only work if using language servers
 let g:ale_completion_enabled = 1
+" Sane defaults that are only set like that sometimes
 set completeopt=menu,menuone,preview,noselect,noinsert
+" Run Ale fixer if applicable on save
+let g:ale_fix_on_save = 1
 " AILLINE :triumph:
 let g:airline#extensions#ale#enabled = 1
 
@@ -143,15 +152,16 @@ let b:ale_fixers = {
         \'rust' : ['rustfmt'],
         \'c++' : ['clang-format'],
         \'c' : ['clang-format'],
-        \'go': ['goimports']
+        \'go': ['goimports'],
 \}
 
-let g:ale_linters = {'rust': ['rls'], 'c': ['clangd'], 'c++': ['clangd'], 'go': ['gopls']}
-let g:ale_completion_enabled = 1
+let g:ale_linters = {
+         \'rust': ['rls'],
+         \'c': ['clangd'],
+         \'c++': ['clangd'],
+         \'go': ['gopls'],
+\}
 let g:ale_rust_rls_toolchain = 'stable'
-
-" Run Ale fixer if applicable on save
-let g:ale_fix_on_save = 1
 
 " Vimwiki stuff
 let g:vimwiki_list = [{

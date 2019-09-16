@@ -21,7 +21,6 @@ au Filetype c++ setl sw=2 sts=2 et
 au Filetype vimwiki,markdown,tex setl tw=80 spell spelllang=en
 "au Filetype markdown setl tw=80 spell spelllang=en
 "au Filetype markdown setl tw=80 spell spelllang=en
-au TermOpen * setl ma
 
 set expandtab           " Tabs are spaces - woo standards
 set ruler               " Show row and line numbers
@@ -46,6 +45,7 @@ if has("nvim")
     highlight Normal ctermbg=NONE
     highlight nonText ctermbg=NONE
     set inccommand=nosplit
+    au TermOpen * setl ma
 endif
 
 " Disable Ex mode

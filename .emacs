@@ -28,6 +28,8 @@
 
 ;; Make EVIL feel more like home
 (use-package evil-numbers)
+(use-package gruxbox)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 ;; Change cursor in EVIL insert mode
 (setq-default evil-insert-state-cursor 'bar)
@@ -36,8 +38,8 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
 (set-face-attribute 'default nil :height 140)
 
-;; Set theme to solarized light
-(load-theme 'solarized t)
+;; Set theme to gruvbox
+(load-theme 'gruvbox t)
 
 (use-package powerline)
 (powerline-center-evil-theme)

@@ -4,8 +4,6 @@ export PATH=$PATH:~/developer/scripts
 export PATH=$PATH:~/bin/kotlin-native/dist/bin/
 # For linuxbrew
 export PATH=$PATH:~/.linuxbrew/bin
-# F L U T T E R
-export PATH=$PATH:~/bin/flutter/bin
 
 # Fucking hate Go and GOPATH
 export GOPATH=$HOME/developer/go

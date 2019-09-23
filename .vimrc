@@ -150,7 +150,7 @@ let b:ale_fixers = {
         \'*': ['remove_trailing_lines', 'trim_whitespace'],
         \'kotlin' : ['ktlint'],
         \'rust' : ['rustfmt'],
-        \'c++' : ['clang-format'],
+        \'cpp' : ['clang-format'],
         \'c' : ['clang-format'],
         \'go': ['goimports'],
 \}
@@ -158,7 +158,7 @@ let b:ale_fixers = {
 let g:ale_linters = {
          \'rust': ['rls'],
          \'c': ['clangd'],
-         \'c++': ['clangd'],
+         \'cpp': ['clangd'],
          \'go': ['gopls'],
 \}
 let g:ale_rust_rls_toolchain = 'stable'

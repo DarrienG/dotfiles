@@ -28,7 +28,6 @@
 
 ;; Make EVIL feel more like home
 (use-package evil-numbers)
-(use-package gruxbox)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 ;; Change cursor in EVIL insert mode

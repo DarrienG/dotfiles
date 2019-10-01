@@ -38,6 +38,8 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
 (set-face-attribute 'default nil :height 140)
 
+(use-package gruvbox-theme)
+
 ;; Set theme to gruvbox
 (load-theme 'gruvbox t)
 

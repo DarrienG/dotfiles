@@ -10,9 +10,6 @@ autocmd Filetype kotlin setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype yaml.ansible setlocal cursorcolumn
 autocmd Filetype yaml setlocal cursorcolumn
 
-" Burn in hell python
-let g:python_recommended_style = 0
-
 " clang-format likes 2 spaces
 au Filetype c setl sw=2 sts=2 et
 au Filetype c++ setl sw=2 sts=2 et
@@ -142,6 +139,8 @@ let g:ale_fix_on_save = 1
 " AILLINE :triumph:
 let g:airline#extensions#ale#enabled = 1
 
+let g:go_version_warning = 0
+
 let g:ale_kotlin_ktlint_executable = "/usr/bin/ktlint"
 " Cargo check is faster and built in
 
@@ -151,16 +150,20 @@ let b:ale_fixers = {
         \'kotlin' : ['ktlint'],
         \'rust' : ['rustfmt'],
         \'cpp' : ['clang-format'],
-        \'c' : ['clang-format'],
+        \'python' : ['black'],
         \'go': ['goimports'],
 \}
+        "\'c' : ['clang-format'],
 
 let g:ale_linters = {
          \'rust': ['rls'],
-         \'c': ['clangd'],
          \'cpp': ['clangd'],
+         \'c': ['clangd'],
+         \'python' : ['pyls'],
          \'go': ['gopls'],
 \}
+
+
 let g:ale_rust_rls_toolchain = 'stable'
 
 " Vimwiki stuff

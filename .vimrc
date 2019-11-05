@@ -77,7 +77,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'w0rp/ale'
 
 " QOL Vim-wide editor improvements
-Plug 'townk/vim-autoclose'
+Plug 'tmsvg/pear-tree'
 Plug 'machakann/vim-highlightedyank'
 
 Plug 'vimwiki/vimwiki'

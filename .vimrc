@@ -142,10 +142,9 @@ let g:airline#extensions#ale#enabled = 1
 let g:go_version_warning = 0
 
 let g:ale_kotlin_ktlint_executable = "/usr/bin/ktlint"
-" Cargo check is faster and built in
 
 " Set some fixers for languages
-let b:ale_fixers = {
+let g:ale_fixers = {
         \'*': ['remove_trailing_lines', 'trim_whitespace'],
         \'kotlin' : ['ktlint'],
         \'rust' : ['rustfmt'],
@@ -153,7 +152,6 @@ let b:ale_fixers = {
         \'python' : ['black'],
         \'go': ['goimports'],
 \}
-        "\'c' : ['clang-format'],
 
 let g:ale_linters = {
          \'rust': ['rls'],

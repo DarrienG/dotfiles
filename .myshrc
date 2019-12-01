@@ -27,6 +27,7 @@ alias remake="make clean && make"
 alias off="find -L -O3 . -type f -name "
 alias ofd="find -L -O3 . -type d -name "
 alias xclip="xclip -selection clipboard"
+alias style='bash -c  "$(curl -sLo- https://git.io/vQgMr)"'
 
 # SQL aliases
 alias pgsql="sudo su postgres -c psql"
@@ -71,12 +72,6 @@ alias mkgo=". mkgo"
 # SSH aliases and variables
 alias ssmer="ssh dglasser@mercury.cs.uml.edu"
 alias sscs="ssh dglasser@cs.uml.edu"
-PROD="root@67.205.144.62"
-alias sspr="ssh root@67.205.144.62"
-
-# Aliases to jump to servers
-alias sdoc="ssh -i ~/developer/pem_keys/generic.pem ubuntu@52.3.99.185"
-alias spill="ssh -i ~/developer/pem_keys/pizzadog.pem ubuntu@52.91.97.147"
 
 # Apparently you need this if you want to have nested TMUX sessions :anger:
 TMUX=""

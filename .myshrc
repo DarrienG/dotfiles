@@ -25,8 +25,8 @@ alias ls="exa"
 alias rs="source ~/.zshrc"
 alias vedit="vim ~/.vimrc"
 alias remake="make clean && make"
-alias off="find -L -O3 . -type f -name "
-alias ofd="find -L -O3 . -type d -name "
+alias off="find . -type f -name "
+alias ofd="find . -type d -name "
 alias xclip="xclip -selection clipboard"
 alias style='bash -c  "$(curl -sLo- https://git.io/vQgMr)"'
 

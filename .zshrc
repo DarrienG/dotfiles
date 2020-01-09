@@ -22,12 +22,9 @@ else
 fi
 
 source ~/.myshrc
-
-source /home/darrien/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.osrc
 
 export PATH="/usr/local/sbin:$PATH"
-. '/home/darrien/.local/share/zrs/z.sh'
-. ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^Y' autosuggest-accept
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
@@ -35,6 +32,3 @@ export SDKMAN_DIR="/home/dglasser/.sdkman"
 [[ -s "/home/dglasser/.sdkman/bin/sdkman-init.sh" ]] && source "/home/dglasser/.sdkman/bin/sdkman-init.sh"
 
 fpath=(/home/darrien/.zsh/gradle-completion $fpath)
-
-
-. '/home/darrien/.local/share/zrs/z.sh'

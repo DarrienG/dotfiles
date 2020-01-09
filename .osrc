@@ -1,0 +1,8 @@
+case `uname` in
+  Darwin)
+    . ~/.macrc
+  ;;
+  Linux)
+    . ~/.linuxrc
+  ;;
+esac

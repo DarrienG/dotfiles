@@ -1,3 +1,3 @@
-. '/home/darrien/.local/share/zrs/z.sh'
+. ~/.local/share/zrs/z.sh
 . ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-. /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+. /home/darrien/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

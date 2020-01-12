@@ -22,6 +22,7 @@ export RUSTC_WRAPPER=sccache
 alias l="exa"
 alias sl="exa"
 alias ls="exa"
+alias la="ls -al"
 alias rs="source ~/.zshrc"
 alias vedit="vim ~/.vimrc"
 alias remake="make clean && make"

@@ -1,8 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
-ZSH_THEME="zhann"
-
 ENABLE_CORRECTION="false"
 
 COMPLETION_WAITING_DOTS="false"

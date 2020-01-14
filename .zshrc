@@ -27,8 +27,4 @@ source ~/.osrc
 export PATH="/usr/local/sbin:$PATH"
 bindkey '^Y' autosuggest-accept
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/dglasser/.sdkman"
-[[ -s "/home/dglasser/.sdkman/bin/sdkman-init.sh" ]] && source "/home/dglasser/.sdkman/bin/sdkman-init.sh"
-
 fpath=(/home/darrien/.zsh/gradle-completion $fpath)

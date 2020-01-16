@@ -3,8 +3,8 @@ syntax on
 filetype plugin indent on
 set background=dark
 
-set tabstop=4
-set shiftwidth=4        " :weary-face:
+set tabstop=2
+set shiftwidth=2        " :weary-face:
 
 autocmd Filetype kotlin setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype yaml.ansible setlocal cursorcolumn

@@ -10,6 +10,7 @@ export GOPATH=$HOME/developer/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
+export GO111MODULE=on
 
 # Pip user dirs
 export PATH=$PATH:~/.local/bin

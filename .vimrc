@@ -159,6 +159,7 @@ let g:ale_linters = {
          \'c': ['clangd'],
          \'python' : ['pyls'],
          \'go': ['gopls'],
+         \'typescript': ['tsserver'],
 \}
 
 

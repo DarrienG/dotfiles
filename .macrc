@@ -5,5 +5,5 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 if [[ $(hostname) == 'BOSMM2YP2N8LVCJ' ]]; then
     . ~/developer/dotfiles/glarrien-lite.zsh-theme
 else
-    ZSH_THEME="zhann"
+    . ~/developer/dotfiles/glarrien-heavy.zsh-theme
 fi

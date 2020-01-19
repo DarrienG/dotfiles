@@ -70,7 +70,6 @@ Plug 'morhetz/gruvbox'
 Plug 'fatih/vim-go'
 Plug 'sheerun/vim-polyglot'
 let g:polyglot_disabled = ['go']
-Plug 'towolf/vim-helm'
 Plug 'ntpeters/vim-better-whitespace'
 
 " IDE like improvements
@@ -150,7 +149,7 @@ let g:ale_fixers = {
         \'rust' : ['rustfmt'],
         \'cpp' : ['clang-format'],
         \'python' : ['black'],
-        \'go': ['goimports'],
+        \'go' : ['goimports'],
 \}
 
 let g:ale_linters = {

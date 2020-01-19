@@ -1,33 +1,38 @@
 #!/usr/bin/env bash
 
 if [[ $UID != 0 ]]; then
-    echo "Please run this script with sudo:"
-    echo "sudo $0 $*"
-    exit 1
+  echo "Please run this script with sudo:"
+  echo "sudo $0 $*"
+  exit 1
 fi
 
 getPackageManager() {
-    UNCLEAN_OS=$(lsb_release -a | grep 'Distributor ID:' | tr '[:upper:]' '[:lower:]')
-    if [[ "$UNCLEAN_OS" =~ "ubuntu" || "$UNCLEAN_OS" =~ "debian" ]]; then
-        echo "apt-get update -y && apt dist-upgrade -y && apt install -y"
-    elif [[ "$UNCLEAN_OS" =~ "arch" ]]; then
-        echo "pacman -Syu"
-    elif [[ "$UNCLEAN_OS" =~ "centos" ]]; then
-        echo "yum install -y"
-    elif [[ "$UNCLEAN_OS" =~ "fedora" ]]; then
-        echo "dnf install -y"
-    else
-        echo "OS unknown, please run setup manually"
-        exit 1
-    fi
+  UNCLEAN_OS=$(lsb_release -a | grep 'Distributor ID:' | tr '[:upper:]' '[:lower:]')
+  if [[ "$UNCLEAN_OS" =~ "ubuntu" || "$UNCLEAN_OS" =~ "debian" ]]; then
+    echo "apt-get update -y && apt dist-upgrade -y && apt install -y"
+  elif [[ "$UNCLEAN_OS" =~ "arch" ]]; then
+    echo "pacman -Syu"
+  elif [[ "$UNCLEAN_OS" =~ "centos" ]]; then
+    echo "yum install -y"
+  elif [[ "$UNCLEAN_OS" =~ "fedora" ]]; then
+    echo "dnf install -y"
+  else
+    # Assuming macOS
+    echo "brew install"
+  fi
 }
 
-PACKAGES="install blueman build-essential default-jdk exfat-fuse ffmpeg gimp git help2man i3 neovim python3 scrot xss-lock zsh"
+LINUX_PACKAGES="blueman build-essential default-jdk exfat-fuse gimp help2man i3 i3lock i3lock-fancy scrot xss-lock"
+AGNOSTIC_PACKAGES="emacs ffmpeg git neovim python3 tmux vim zsh"
 PACKAGE_MANAGER_CMD=$(getPackageManagerCmd)
 
 echo "Getting latest packages and installing base packages..."
 
-eval "$PACKAGE_MANAGER_CMD $PACKAGES"
+eval "$PACKAGE_MANAGER_CMD $AGNOSTIC_PACKAGES"
+
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  eval "$PACKAGE_MANAGER_CMD $LINUX_PACKAGES"
+fi
 
 echo "Setting up basic dirs..."
 mkdir -p ~/documents

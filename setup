@@ -22,7 +22,7 @@ getPackageManager() {
   fi
 }
 
-LINUX_PACKAGES="blueman build-essential default-jdk exfat-fuse gimp help2man i3 i3lock i3lock-fancy scrot xss-lock"
+LINUX_PACKAGES="arandr autorandr blueman build-essential default-jdk exfat-fuse gimp help2man i3 i3lock i3lock-fancy rofi scrot xss-lock"
 AGNOSTIC_PACKAGES="emacs ffmpeg git neovim python3 tmux vim zsh"
 PACKAGE_MANAGER_CMD=$(getPackageManagerCmd)
 
@@ -40,6 +40,13 @@ mkdir -p ~/documents
 ./setup-links.sh
 
 . ~/.zshrc
+
+# Installing using scripts
+
+# We might have already manually cloned dotfiles to get this script
+if [[ ! -d "$HOME/developer/scripts" ]]; then
+    git clone https://github.com/DarrienG/sillyscripts $HOME/developer/scripts
+fi
 
 echo "Installing alternative packages..."
 echo "\tbrightness utils"

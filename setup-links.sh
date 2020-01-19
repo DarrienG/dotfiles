@@ -10,7 +10,7 @@ if [[ ! -d "$DOTFILE_PATH" ]]; then
 fi
 
 echo "Setting up links"
-mkdir -p ~/.config/i3
+mkdir -p ~/.config
 # i3
 ln -sfn $DOTFILE_PATH/i3 ~/.config/i3
 ln -sfn $DOTFILE_PATH/i3status ~/.config/i3status

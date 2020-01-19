@@ -36,6 +36,8 @@ ln -sfn $DOTFILE_PATH/.tmux.conf ~/.tmux.conf
 # Linux specific links
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   sudo mkdir -p /etc/systemd/system/sleep.target.wants/
-  sudo ln -sfn $DOTFILE_PATH/screenlock.service /etc/systemd/system/sleep.target.wants/screenlock.service
+  sudo ln -sfn $DOTFILE_PATH/screenlock.service /etc/systemd/system/screenlock.service
   sudo ln -sfn $DOTFILE_PATH/start-lock.sh /usr/local/bin/start-lock.sh
+  sudo systemctl enable screenlock.service
+  sudo systemctl start screenlock.service
 fi

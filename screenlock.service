@@ -3,11 +3,10 @@ Description=Starts i3lock at suspend time
 Before=sleep.target
 
 [Service]
-User=darrien
+User=%I
 Type=forking
 Environment=DISPLAY=:0
-ExecStartPre=
 ExecStart=/usr/local/bin/start-lock.sh
 
 [Install]
-WantedBy=sleep.target
+WantedBy=suspend.target

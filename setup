@@ -22,9 +22,9 @@ getPackageManager() {
   fi
 }
 
-LINUX_PACKAGES="arandr autorandr blueman build-essential default-jdk exfat-fuse gimp help2man i3 i3lock i3lock-fancy rofi scrot xss-lock"
-AGNOSTIC_PACKAGES="emacs ffmpeg git go neovim python3 tmux vim zsh"
-PACKAGE_MANAGER_CMD=$(getPackageManagerCmd)
+LINUX_PACKAGES="arandr automake autorandr blueman build-essential default-jdk exfat-fuse gimp help2man i3 i3lock i3lock-fancy rofi scrot xss-lock"
+AGNOSTIC_PACKAGES="emacs ffmpeg git neovim python3 tmux vim zsh"
+PACKAGE_MANAGER_CMD=$(getPackageManager)
 
 echo "Getting latest packages and installing base packages..."
 
@@ -55,13 +55,6 @@ cd /tmp/light
 ./autogen.sh && ./configure && make && sudo make install
 cd
 
-echo "\trust"
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-RUST_PACKAGES="typeracer cargo-update exa topgrade zrs"
-echo "\t$RUST_PACKAGES"
-cargo install "$RUST_PACKAGES"
-
 echo "Setting up git..."
 git config --global user.email "darrienglasser@outlook.com"
 git config --global user.name "DarrienG"
@@ -76,6 +69,7 @@ echo "Add your ssh key to Github: https://github.com/settings/keys"
 echo "Sign into Firefox"
 echo "Download Slack and sign in!"
 echo "Install Oh my Zsh:"
-echo "sh -c \"$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)\""
+echo 'sh -c \"$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)\"'
+echo "Run ./rust-setup.sh without root and go for it!"
 
 echo "Setup complete!"

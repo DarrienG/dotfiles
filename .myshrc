@@ -31,7 +31,7 @@ alias off="find . -type f -name "
 alias ofd="find . -type d -name "
 alias xclip="xclip -selection clipboard"
 alias style='bash -c  "$(curl -sLo- https://git.io/vQgMr)"'
-alias i="idea"
+alias i="idea ."
 
 # SQL aliases
 alias pgsql="sudo su postgres -c psql"

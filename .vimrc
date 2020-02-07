@@ -151,6 +151,8 @@ let g:ale_fixers = {
         \'cpp' : ['clang-format'],
         \'python' : ['black'],
         \'go' : ['goimports'],
+        \'typescript' : ['eslint'],
+        \'typescriptreact' : ['eslint'],
 \}
 
 let g:ale_linters = {

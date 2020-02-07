@@ -64,7 +64,7 @@ set title
 call plug#begin('~/.vim/plugged')
 
 " Solarized pls
-Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
 
 " Syntax highlighting and definitions
 Plug 'fatih/vim-go'
@@ -89,7 +89,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-speeddating'
 call plug#end()
 
-colorscheme gruvbox
+set background=light
+colorscheme solarized
 
 if !has("nvim")
     let g:airline_theme = "light"

@@ -1,4 +1,4 @@
 . ~/.local/share/zrs/z.sh
-. ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-. /home/darrien/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+. /home/linuxbrew/.linuxbrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+. /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 . ~/developer/dotfiles/glarrien-heavy.zsh-theme

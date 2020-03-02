@@ -16,8 +16,6 @@ au Filetype c++ setl sw=2 sts=2 et
 
 " Spellchecking and reasonable line limits in texty files
 au Filetype vimwiki,markdown,tex setl tw=80 spell spelllang=en
-"au Filetype markdown setl tw=80 spell spelllang=en
-"au Filetype markdown setl tw=80 spell spelllang=en
 
 set expandtab           " Tabs are spaces - woo standards
 set ruler               " Show row and line numbers
@@ -74,6 +72,7 @@ Plug 'ntpeters/vim-better-whitespace'
 
 " IDE like improvements
 Plug 'w0rp/ale'
+Plug 'dominikduda/vim_current_word'
 
 " QOL Vim-wide editor improvements
 Plug 'tmsvg/pear-tree'

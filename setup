@@ -22,7 +22,7 @@ getPackageManager() {
   fi
 }
 
-LINUX_PACKAGES="arandr automake autorandr blueman build-essential compton default-jdk exfat-fuse gimp help2man i3 i3lock i3lock-fancy rofi scrot xss-lock"
+LINUX_PACKAGES="arandr automake autorandr blueman build-essential compton default-jdk exfat-fuse feh gimp help2man i3 i3lock i3lock-fancy rofi scrot xss-lock"
 AGNOSTIC_PACKAGES="emacs ffmpeg git neovim python3 tmux neovim zsh"
 PACKAGE_MANAGER_CMD=$(getPackageManager)
 

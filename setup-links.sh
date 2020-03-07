@@ -33,6 +33,9 @@ ln -sfn $DOTFILE_PATH/.emacs ~/.emacs
 # Tmux
 ln -sfn $DOTFILE_PATH/.tmux.conf ~/.tmux.conf
 
+# Compton
+ln -sfn $DOTFILE_PATH/compton ~/.config/compton
+
 # Linux specific links
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   sudo mkdir -p /etc/systemd/system/sleep.target.wants/

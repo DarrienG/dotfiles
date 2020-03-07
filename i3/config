@@ -193,7 +193,3 @@ exec xss-lock -- i3lock -n --nofork
 # Always start calculator in floating mode
 # If using a calculator other than gnome-calculator, change here
 for_window [class="Gnome-calculator"] floating enable
-
-exec --no-startup-id "\emacs --daemon"
-
-exec --no-startup-id feh --bg-scale /home/darrien/pictures/walls/debian.jpg

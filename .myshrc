@@ -3,8 +3,7 @@ export PATH=$PATH:~/bin
 export PATH=$PATH:~/developer/scripts
 export PATH=$PATH:~/bin/kotlin-native/dist/bin/
 # For linuxbrew
-export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
-export PATH=$PATH:/home/linuxbrew/.linuxbrew/sbin
+export PATH=/home/linuxbrew/.linuxbrew/sbin:/home/linuxbrew/.linuxbrew/bin:$PATH
 
 # Fucking hate Go and GOPATH
 export GOPATH=$HOME/developer/go

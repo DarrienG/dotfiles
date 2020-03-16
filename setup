@@ -22,8 +22,10 @@ getPackageManager() {
   fi
 }
 
-LINUX_PACKAGES="arandr automake autorandr blueman build-essential compton default-jdk exfat-fuse feh gimp help2man i3 i3lock i3lock-fancy rofi scrot xss-lock"
-AGNOSTIC_PACKAGES="emacs ffmpeg git neovim python3 tmux neovim zsh"
+LINUX_PACKAGES="arandr automake autorandr blueman build-essential compton default-jdk exfat-fuse feh flameshot gimp help2man i3 i3lock rofi xss-lock"
+# These aren't always there, but we should try via package manager if we can
+EXTRA_LINUX_PACKAGES="i3lock-fancy light"
+AGNOSTIC_PACKAGES="emacs ffmpeg git neovim python3 tmux zsh"
 PACKAGE_MANAGER_CMD=$(getPackageManager)
 
 echo "Getting latest packages and installing base packages..."
@@ -32,6 +34,8 @@ eval "$PACKAGE_MANAGER_CMD $AGNOSTIC_PACKAGES"
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   eval "$PACKAGE_MANAGER_CMD $LINUX_PACKAGES"
+  echo "Trying to install extra Linux packages"
+  eval "$PACKAGE_MANAGER_CMD $EXTRA_LINUX_PACKAGES"
 fi
 
 echo "Setting up basic dirs..."
@@ -39,21 +43,12 @@ mkdir -p ~/documents
 
 ./setup-links.sh
 
-. ~/.zshrc
-
 # Installing using scripts
 
 # We might have already manually cloned dotfiles to get this script
 if [[ ! -d "$HOME/developer/scripts" ]]; then
     git clone https://github.com/DarrienG/sillyscripts $HOME/developer/scripts
 fi
-
-echo "Installing alternative packages..."
-echo "\tbrightness utils"
-git clone https://github.com/haikarainen/light /tmp/light
-cd /tmp/light
-./autogen.sh && ./configure && make && sudo make install
-cd
 
 echo "Setting up git..."
 git config --global user.email "darrienglasser@outlook.com"

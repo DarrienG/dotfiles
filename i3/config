@@ -16,6 +16,9 @@ focus_follows_mouse no
 # bindsym $mod+Return exec emacs -f ansi-term
 bindsym $mod+Return exec gnome-terminal
 
+# ez screenshot
+bindsym $mod+Shift+s exec flameshot gui
+
 # kill focused window
 bindsym $mod+Shift+q kill
 

@@ -72,7 +72,6 @@ Plug 'ntpeters/vim-better-whitespace'
 
 " IDE like improvements
 Plug 'w0rp/ale'
-Plug 'dominikduda/vim_current_word'
 
 " QOL Vim-wide editor improvements
 Plug 'tmsvg/pear-tree'

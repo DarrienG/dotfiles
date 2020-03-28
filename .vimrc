@@ -56,9 +56,6 @@ set scrolljump=-50       " Use emacs-like scrolling in Vim
 autocmd BufEnter * let &titlestring = ''.expand("%:t")
 set title
 
-" Equivalent of M-x delete-trailing-whitespace
-:nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
-
 call plug#begin('~/.vim/plugged')
 
 " Solarized pls
@@ -76,6 +73,9 @@ Plug 'w0rp/ale'
 " QOL Vim-wide editor improvements
 Plug 'tmsvg/pear-tree'
 Plug 'machakann/vim-highlightedyank'
+
+" Org mode sucks
+Plug 'aserebryakov/vim-todo-lists'
 
 Plug 'vimwiki/vimwiki'
 

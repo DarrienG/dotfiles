@@ -35,6 +35,7 @@ alias ofd="find . -type d -name "
 alias xclip="xclip -selection clipboard"
 alias style='bash -c  "$(curl -sLo- https://git.io/vQgMr)"'
 alias i="idea ."
+alias today="vim ~/today.todo"
 
 # SQL aliases
 alias pgsql="sudo su postgres -c psql"

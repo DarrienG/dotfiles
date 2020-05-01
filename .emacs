@@ -29,9 +29,10 @@
 ;; Make EVIL feel more like home
 (use-package evil-numbers)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/monokai-emacs")
 
 ;; Set theme to solarized
-(load-theme 'solarized-dark t)
+(load-theme 'monokai t)
 
 ;; Change cursor in EVIL insert mode
 (setq-default evil-insert-state-cursor 'bar)

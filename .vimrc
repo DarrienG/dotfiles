@@ -60,7 +60,6 @@ call plug#begin('~/.vim/plugged')
 
 " Solarized pls
 Plug 'reedes/vim-colors-pencil'
-Plug 'edkolev/tmuxline.vim'
 
 " Syntax highlighting and definitions
 Plug 'fatih/vim-go'

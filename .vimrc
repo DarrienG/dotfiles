@@ -59,7 +59,8 @@ set title
 call plug#begin('~/.vim/plugged')
 
 " Solarized pls
-Plug 'altercation/vim-colors-solarized'
+Plug 'reedes/vim-colors-pencil'
+Plug 'edkolev/tmuxline.vim'
 
 " Syntax highlighting and definitions
 Plug 'fatih/vim-go'
@@ -87,12 +88,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-speeddating'
 call plug#end()
 
-set background=light
-colorscheme solarized
+colorscheme pencil
 
-if !has("nvim")
-    let g:airline_theme = "light"
-endif
+let g:airline_theme = "pencil"
 
 " vim-go customizations
 let g:go_fmt_command = "goimports"

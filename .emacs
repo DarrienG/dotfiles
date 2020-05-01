@@ -31,7 +31,7 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
 
 ;; Set theme to solarized
-(load-theme 'solarized t)
+(load-theme 'solarized-dark t)
 
 ;; Change cursor in EVIL insert mode
 (setq-default evil-insert-state-cursor 'bar)

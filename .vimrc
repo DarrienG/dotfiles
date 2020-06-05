@@ -74,9 +74,6 @@ Plug 'w0rp/ale'
 Plug 'tmsvg/pear-tree'
 Plug 'machakann/vim-highlightedyank'
 
-" Org mode sucks
-Plug 'aserebryakov/vim-todo-lists'
-
 Plug 'vimwiki/vimwiki'
 
 " Aesthetic improvements

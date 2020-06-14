@@ -1,7 +1,8 @@
 set nonumber
 syntax on
 filetype plugin indent on
-set background=dark
+set background=light
+set termguicolors       " How the FUCk was this not on before - add true color
 
 set tabstop=2
 set shiftwidth=2        " :weary-face:
@@ -37,8 +38,6 @@ set lazyredraw          " redraw only when we need to.
 hi CursorLine term=bold cterm=bold
 " Nvim on F18 has a strange BG property
 if has("nvim")
-    highlight Normal ctermbg=NONE
-    highlight nonText ctermbg=NONE
     set inccommand=nosplit
     au TermOpen * setl ma
 endif
@@ -59,7 +58,7 @@ set title
 call plug#begin('~/.vim/plugged')
 
 " Solarized pls
-Plug 'reedes/vim-colors-pencil'
+Plug 'morhetz/gruvbox'
 
 " Syntax highlighting and definitions
 Plug 'fatih/vim-go'
@@ -84,9 +83,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-speeddating'
 call plug#end()
 
-colorscheme pencil
+colorscheme gruvbox
 
-let g:airline_theme = "pencil"
+let g:airline_theme = "gruvbox"
 
 " vim-go customizations
 let g:go_fmt_command = "goimports"

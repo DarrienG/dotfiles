@@ -65,15 +65,14 @@ Plug 'fatih/vim-go'
 Plug 'sheerun/vim-polyglot'
 let g:polyglot_disabled = ['go']
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'rust-lang/rust.vim'
 
 " IDE like improvements
-Plug 'w0rp/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " QOL Vim-wide editor improvements
 Plug 'tmsvg/pear-tree'
 Plug 'machakann/vim-highlightedyank'
-
-Plug 'vimwiki/vimwiki'
 
 " Aesthetic improvements
 Plug 'vim-airline/vim-airline'
@@ -89,6 +88,7 @@ let g:airline_theme = "gruvbox"
 
 " vim-go customizations
 let g:go_fmt_command = "goimports"
+let g:rustfmt_autosave = 1
 
 " Patch airline to use more standard unicode glyphs
 " air-line
@@ -106,61 +106,52 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
-let g:ale_rust_rls_toolchain = 'stable'
-
-" Run Ale fixer if applicable on save
-let g:ale_fix_on_save = 1
-
 " Cycle forward on suggestions with tab abd back with shift+tab
 inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 inoremap <expr> <cr> ((pumvisible())?("\<C-y>"):("\<cr>"))
 
-" Ale checking options
-let g:ale_sign_error = "✕"
-let g:ale_sign_warning = "⁂"
+set updatetime=1000
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-" This will only work if using language servers
-let g:ale_completion_enabled = 1
-" Sane defaults that are only set like that sometimes
-set completeopt=menu,menuone,preview,noselect,noinsert
-" Run Ale fixer if applicable on save
-let g:ale_fix_on_save = 1
-" AILLINE :triumph:
-let g:airline#extensions#ale#enabled = 1
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
-let g:go_version_warning = 0
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-let g:ale_kotlin_ktlint_executable = "/usr/bin/ktlint"
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
-" Set some fixers for languages
-let g:ale_fixers = {
-        \'*': ['remove_trailing_lines', 'trim_whitespace'],
-        \'kotlin' : ['ktlint'],
-        \'rust' : ['rustfmt'],
-        \'cpp' : ['clang-format'],
-        \'python' : ['black'],
-        \'go' : ['goimports'],
-        \'typescript' : ['eslint'],
-        \'typescriptreact' : ['eslint'],
-\}
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
-let g:ale_linters = {
-         \'rust': ['rls'],
-         \'cpp': ['clangd'],
-         \'c': ['clangd'],
-         \'python' : ['pyls'],
-         \'go': ['gopls'],
-         \'typescript': ['tsserver'],
-\}
-
-
-let g:ale_rust_rls_toolchain = 'stable'
-
-" Vimwiki stuff
-let g:vimwiki_list = [{
-            \'path' : '$HOME/documents/vimwiki/',
-            \'path_html':'$HOME/developer/webdev/DarrienG.github.io/extern/',
-            \'auto_export':1
-\}]
+" Mappings for CoCList
+" Show all diagnostics.
+nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions.
+nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+" Show commands.
+nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document.
+nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols.
+nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list.
+nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>

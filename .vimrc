@@ -59,6 +59,7 @@ call plug#begin('~/.vim/plugged')
 
 " Let's try light again :)
 Plug 'chriskempson/tomorrow-theme', { 'rtp': 'vim' }
+Plug 'edkolev/tmuxline.vim'
 
 " Syntax highlighting and definitions
 Plug 'fatih/vim-go'
@@ -74,37 +75,15 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tmsvg/pear-tree'
 Plug 'machakann/vim-highlightedyank'
 
-" Aesthetic improvements
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
 " Dep
 Plug 'tpope/vim-speeddating'
 call plug#end()
 
 colorscheme Tomorrow
 
-let g:airline_theme = "tomorrow"
-
 " vim-go customizations
 let g:go_fmt_command = "goimports"
 let g:rustfmt_autosave = 1
-
-" Patch airline to use more standard unicode glyphs
-" air-line
-let g:airline_powerline_fonts = 1
-
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
 
 " Cycle forward on suggestions with tab abd back with shift+tab
 inoremap <silent><expr> <Tab>

@@ -57,8 +57,8 @@ set title
 
 call plug#begin('~/.vim/plugged')
 
-" Solarized pls
-Plug 'morhetz/gruvbox'
+" Let's try light again :)
+Plug 'chriskempson/tomorrow-theme', { 'rtp': 'vim' }
 
 " Syntax highlighting and definitions
 Plug 'fatih/vim-go'
@@ -82,9 +82,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-speeddating'
 call plug#end()
 
-colorscheme gruvbox
+colorscheme Tomorrow
 
-let g:airline_theme = "gruvbox"
+let g:airline_theme = "tomorrow"
 
 " vim-go customizations
 let g:go_fmt_command = "goimports"

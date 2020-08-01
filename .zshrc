@@ -1,3 +1,6 @@
+# leave update prompts out of my terminal
+DISABLE_AUTO_UPDATE="true"
+
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 

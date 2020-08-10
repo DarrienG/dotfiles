@@ -1,3 +1,6 @@
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
+
 set nonumber
 syntax on
 filetype plugin indent on
@@ -7,7 +10,6 @@ set termguicolors       " How the FUCk was this not on before - add true color
 set tabstop=2
 set shiftwidth=2        " :weary-face:
 
-autocmd Filetype kotlin setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype yaml.ansible setlocal cursorcolumn
 autocmd Filetype yaml setlocal cursorcolumn
 
@@ -74,6 +76,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " QOL Vim-wide editor improvements
 Plug 'tmsvg/pear-tree'
 Plug 'machakann/vim-highlightedyank'
+Plug 'ntpeters/vim-better-whitespace'
 
 " Dep
 Plug 'tpope/vim-speeddating'
@@ -134,3 +137,7 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" Get rid of whitespace
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1

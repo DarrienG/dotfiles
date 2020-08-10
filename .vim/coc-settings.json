@@ -1,4 +1,5 @@
 {
-  "languageserver": {
-  }
+  "python.formatting.provider": "black",
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSaveFiletypes": ["rust", "python"]
 }

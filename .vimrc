@@ -1,5 +1,4 @@
 unlet! skip_defaults_vim
-source $VIMRUNTIME/defaults.vim
 
 set nonumber
 syntax on
@@ -42,6 +41,8 @@ hi CursorLine term=bold cterm=bold
 if has("nvim")
     set inccommand=nosplit
     au TermOpen * setl ma
+else
+    source $VIMRUNTIME/defaults.vim
 endif
 
 " Disable Ex mode

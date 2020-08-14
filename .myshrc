@@ -29,23 +29,22 @@ alias sl="exa"
 alias ls="exa"
 alias la="ls -al"
 alias rs="source ~/.zshrc"
-alias vedit="vim ~/.vimrc"
+alias vedit="$EDITOR ~/.vimrc"
 alias remake="make clean && make"
 alias off="find . -type f -name "
 alias ofd="find . -type d -name "
 alias xclip="xclip -selection clipboard"
 alias style='bash -c  "$(curl -sLo- https://git.io/vQgMr)"'
 alias i="idea ."
-alias today="vim ~/today.todo"
 
 # SQL aliases
 alias pgsql="sudo su postgres -c psql"
 
 # Vim aliases
-alias v="nvim"
-alias vi="nvim"
-alias vim="nvim"
-alias vs="vi ~/.myshrc"
+alias v="$EDITOR"
+alias vs="$EDITOR ~/.myshrc"
+alias vi="$EDITOR"
+alias vim="$EDITOR"
 
 alias kts="kotlinc -script"
 

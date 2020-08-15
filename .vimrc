@@ -62,7 +62,6 @@ call plug#begin('~/.vim/plugged')
 
 " Let's try light again :)
 Plug 'chriskempson/tomorrow-theme', { 'rtp': 'vim' }
-Plug 'edkolev/tmuxline.vim'
 
 " Syntax highlighting and definitions
 Plug 'fatih/vim-go'
@@ -78,6 +77,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tmsvg/pear-tree'
 Plug 'machakann/vim-highlightedyank'
 Plug 'ntpeters/vim-better-whitespace'
+
+Plug 'vimwiki/vimwiki'
 
 " Dep
 Plug 'tpope/vim-speeddating'

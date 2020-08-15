@@ -2,12 +2,14 @@ unlet! skip_defaults_vim
 
 set nonumber
 syntax on
-filetype plugin indent on
 set background=light
 set termguicolors       " How the FUCk was this not on before - add true color
 
+filetype plugin indent on
 set tabstop=2
-set shiftwidth=2        " :weary-face:
+set shiftwidth=2
+set softtabstop=2
+set expandtab           " Tabs are spaces - woo standards
 
 autocmd Filetype yaml.ansible setlocal cursorcolumn
 autocmd Filetype yaml setlocal cursorcolumn
@@ -19,7 +21,6 @@ au Filetype c++ setl sw=2 sts=2 et
 " Spellchecking and reasonable line limits in texty files
 au Filetype vimwiki,markdown,tex setl tw=80 spell spelllang=en
 
-set expandtab           " Tabs are spaces - woo standards
 set ruler               " Show row and line numbers
 
 set nonu                " No NUMBERS

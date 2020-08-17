@@ -85,7 +85,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'tpope/vim-speeddating'
 call plug#end()
 
-colorscheme Tomorrow-Night-Eighties
+colorscheme Tomorrow-Night-Blue
 
 " vim-go customizations
 let g:go_fmt_command = "goimports"

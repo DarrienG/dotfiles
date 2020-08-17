@@ -1,14 +1,5 @@
-;;; .emacs --- load emacs 24's package system. Add MELPA repository.
-;;; Commentary: Configuration for Emacs
-;;; Code:
-(when (>= emacs-major-version 24)
-  (require 'package)
-  (add-to-list
-   'package-archives
-   ;; '("melpa" . "http://stable.melpa.org/packages/") ; many packages won't show if using stable
-   '("melpa" . "http://melpa.milkbox.net/packages/")
-   t))
-
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
 ;; Set up use package
@@ -28,6 +19,8 @@
 
 ;; Make EVIL feel more like home
 (use-package evil-numbers)
+(use-package color-theme-sanityinc-tomorrow)
+
 ;;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
 ;;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/tomorrow-theme")
 ;;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/monokai-emacs")
@@ -175,7 +168,7 @@
  '(org-agenda-files (quote ("~/Documents/org/todo.org")))
  '(package-selected-packages
    (quote
-    (groovy-mode gradle-mode evil-numbers flycheck-Gradle flycheck-kotlin flycheck-gradle lsp-mode lsp company company-mode helm markdown-mode kotlin-mode autopair dockerfile-mode dart-mode org-journal org-bullets use-package use-package-el-get evil))))
+    (color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow groovy-mode gradle-mode evil-numbers flycheck-Gradle flycheck-kotlin flycheck-gradle lsp-mode lsp company company-mode helm markdown-mode kotlin-mode autopair dockerfile-mode dart-mode org-journal org-bullets use-package use-package-el-get evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

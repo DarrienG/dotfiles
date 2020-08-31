@@ -21,7 +21,9 @@ au Filetype c++ setl sw=2 sts=2 et
 " Spellchecking and reasonable line limits in texty files
 au Filetype vimwiki,markdown,tex setl tw=80 spell spelllang=en
 
-set ruler               " Show row and line numbers
+set ruler               " Show row and line numbers in status bar
+
+set laststatus=2        " always show status, not just with two windows open
 
 set nonu                " No NUMBERS
 

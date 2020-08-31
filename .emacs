@@ -23,7 +23,7 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
 ;;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/monokai-emacs")
 
-(load-theme 'solarized-light t)
+(load-theme 'solarized t)
 
 ;; Change cursor in EVIL insert mode
 (setq-default evil-insert-state-cursor 'bar)

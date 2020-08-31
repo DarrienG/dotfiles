@@ -62,7 +62,7 @@ set title
 call plug#begin('~/.vim/plugged')
 
 " Let's try light again :)
-Plug 'chriskempson/tomorrow-theme', { 'rtp': 'vim' }
+Plug 'romainl/flattened'
 
 " Syntax highlighting and definitions
 Plug 'fatih/vim-go'
@@ -85,7 +85,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'tpope/vim-speeddating'
 call plug#end()
 
-colorscheme Tomorrow-Night-Blue
+colorscheme flattened_light
 
 " vim-go customizations
 let g:go_fmt_command = "goimports"

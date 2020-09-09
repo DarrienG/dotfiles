@@ -6,7 +6,7 @@ export PATH=$PATH:~/bin/kotlin-native/dist/bin/
 export PATH=/home/linuxbrew/.linuxbrew/sbin:/home/linuxbrew/.linuxbrew/bin:$PATH
 # Sometimes pkg-config is a dingbat
 # May need to change this up on distros that aren't Linux
-export PKG_CONFIG_PATH=/usr/lib64/pkgconfig
+export PKG_CONFIG_PATH="/usr/lib64/pkgconfig:/usr/share/pkgconfig"
 
 # Fucking hate Go and GOPATH
 export GOPATH=$HOME/developer/go

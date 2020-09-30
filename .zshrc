@@ -3,7 +3,6 @@ DISABLE_AUTO_UPDATE="true"
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
-alias gpb="gp -u origin $(git_current_branch)"
 
 ENABLE_CORRECTION="false"
 
@@ -13,6 +12,7 @@ COMPLETION_WAITING_DOTS="false"
 plugins=(git brew)
 
 source $ZSH/oh-my-zsh.sh
+alias gpb="gp -u origin $(git_current_branch)"
 
 # User configuration
 source ~/.osrc

@@ -20,5 +20,3 @@ source ~/.myshrc
 
 bindkey '^Y' autosuggest-accept
 ZSH_AUTOSUGGEST_USE_ASYNC=t
-
-fpath=(/home/darrien/.zsh/gradle-completion $fpath)

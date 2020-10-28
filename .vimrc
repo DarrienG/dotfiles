@@ -64,7 +64,7 @@ set title
 call plug#begin('~/.vim/plugged')
 
 " Let's try light again :)
-Plug 'romainl/flattened'
+Plug 'morhetz/gruvbox'
 
 " Syntax highlighting and definitions
 Plug 'fatih/vim-go'
@@ -87,7 +87,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'tpope/vim-speeddating'
 call plug#end()
 
-colorscheme flattened_light
+colorscheme gruvbox
 
 " vim-go customizations
 let g:go_fmt_command = "goimports"

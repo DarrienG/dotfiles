@@ -19,11 +19,12 @@
 
 ;; Make EVIL feel more like home
 (use-package evil-numbers)
+(use-package gruvbox-theme)
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
 ;;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/monokai-emacs")
 
-(load-theme 'solarized t)
+(load-theme 'gruvbox-light-medium t)
 
 ;; Change cursor in EVIL insert mode
 (setq-default evil-insert-state-cursor 'bar)

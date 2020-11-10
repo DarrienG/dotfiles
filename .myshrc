@@ -51,7 +51,6 @@ alias kts="kotlinc -script"
 # Linux specific
 # bt restart
 alias poweroff="systemctl poweroff"
-alias reboot="systemctl reboot"
 alias bsr="sudo /etc/init.d/bluetooth restart"
 
 # Program aliases

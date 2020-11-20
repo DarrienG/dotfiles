@@ -1,7 +1,6 @@
 # Extra path variables
 export PATH=$PATH:~/bin
 export PATH=$PATH:~/developer/scripts
-export PATH=$PATH:~/bin/kotlin-native/dist/bin/
 # For linuxbrew
 export PATH=/home/linuxbrew/.linuxbrew/sbin:/home/linuxbrew/.linuxbrew/bin:$PATH
 # Sometimes pkg-config is a dingbat
@@ -36,6 +35,10 @@ alias ofd="find . -type d -name "
 alias xclip="xclip -selection clipboard"
 alias style='bash -c  "$(curl -sLo- https://git.io/vQgMr)"'
 alias i="idea ."
+
+# mvn is too damn loud
+alias mvn="mvn -ntp"
+alias mvnd="mvnd -ntp"
 
 # SQL aliases
 alias pgsql="sudo su postgres -c psql"

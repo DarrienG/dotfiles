@@ -7,7 +7,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 if [[ $(hostname) == 'BOSMM2YP2N8LVCJ' ]]; then
     . ~/developer/dotfiles/glarrien-lite.zsh-theme
     . ~/.hubspot/shellrc
-    alias immutup="mvn -T $(nproc) config:generate com.hubspot.maven.plugins:protoc-bundled-plugin:run --offline"
+    alias immutup="mvn -T $(nproc) config:generate com.hubspot.maven.plugins:protoc-bundled-plugin:run"
 else
     . ~/developer/dotfiles/glarrien-heavy.zsh-theme
 fi

@@ -20,6 +20,3 @@ source ~/.myshrc
 
 bindkey '^Y' autosuggest-accept
 ZSH_AUTOSUGGEST_USE_ASYNC=t
-
-# Added by nex: https://git.hubteam.com/HubSpot/nex
-. ~/.hubspot/shellrc

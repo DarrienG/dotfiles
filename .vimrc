@@ -61,8 +61,12 @@ set scrolljump=-50       " Use emacs-like scrolling in Vim
 autocmd BufEnter * let &titlestring = ''.expand("%:t")
 set title
 
+" Display trailing whitespaces as little dots
 set list
 set listchars=tab:\|\ ,trail:.,extends:>,precedes:<
+
+" Strip trailing whitespace on space
+autocmd BufWritePre * :%s/\s\+$//e
 
 call plug#begin('~/.vim/plugged')
 
@@ -73,7 +77,6 @@ Plug 'romainl/flattened'
 Plug 'fatih/vim-go'
 Plug 'sheerun/vim-polyglot'
 let g:polyglot_disabled = ['go']
-Plug 'ntpeters/vim-better-whitespace'
 Plug 'rust-lang/rust.vim'
 
 " IDE like improvements
@@ -82,7 +85,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " QOL Vim-wide editor improvements
 Plug 'tmsvg/pear-tree'
 Plug 'machakann/vim-highlightedyank'
-Plug 'ntpeters/vim-better-whitespace'
 
 Plug 'vimwiki/vimwiki'
 
@@ -152,3 +154,4 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " Get rid of whitespace
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
+

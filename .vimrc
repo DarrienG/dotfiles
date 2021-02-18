@@ -61,6 +61,9 @@ set scrolljump=-50       " Use emacs-like scrolling in Vim
 autocmd BufEnter * let &titlestring = ''.expand("%:t")
 set title
 
+set list
+set listchars=tab:\|\ ,trail:.,extends:>,precedes:<
+
 call plug#begin('~/.vim/plugged')
 
 " Let's try light again :)

@@ -5,6 +5,6 @@ alias pbcopy='xclip -selection clipboard'
 export PATH=/usr/local/texlive/2020/bin/x86_64-linux:$PATH
 
 . ~/.local/share/zrs/z.sh
-. /home/linuxbrew/.linuxbrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-. /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+. /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+. /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 . ~/developer/dotfiles/glarrien-heavy.zsh-theme

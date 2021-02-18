@@ -11,3 +11,7 @@
 /.vim/syntax/
 /.vim/pack/
 /.vim/view
+*.swp
+*.swm
+*.swn
+*.swo

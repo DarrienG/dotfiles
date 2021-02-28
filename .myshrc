@@ -85,3 +85,6 @@ alias sscs="ssh dglasser@cs.uml.edu"
 
 # Apparently you need this if you want to have nested TMUX sessions :anger:
 TMUX=""
+
+# We aren't working on a 1200 baud modem, the terminal should never freeze
+stty -ixon

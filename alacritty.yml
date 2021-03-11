@@ -27,4 +27,46 @@ colors:
 scrolling:
   history: 10000
 
+key_bindings:
+  - { key: Up,       mods: Alt,     chars: "\x1b[1;5A"                   }
+  - { key: Down,     mods: Alt,     chars: "\x1b[1;5B"                   }
+  - { key: Left,     mods: Alt,     chars: "\x1bb"                       }
+  - { key: Right,    mods: Alt,     chars: "\x1bf"                       }
+  - { key: A,        mods: Alt,     chars: "\x1bA"                       }
+  - { key: B,        mods: Alt,     chars: "\x1bB"                       }
+  - { key: C,        mods: Alt,     chars: "\x1bC"                       }
+  - { key: D,        mods: Alt,     chars: "\x1bD"                       }
+  - { key: E,        mods: Alt,     chars: "\x1bE"                       }
+  - { key: F,        mods: Alt,     chars: "\x1bF"                       }
+  - { key: G,        mods: Alt,     chars: "\x1bG"                       }
+  - { key: H,        mods: Alt,     chars: "\x1bH"                       }
+  - { key: I,        mods: Alt,     chars: "\x1bI"                       }
+  - { key: J,        mods: Alt,     chars: "\x1bJ"                       }
+  - { key: K,        mods: Alt,     chars: "\x1bK"                       }
+  - { key: L,        mods: Alt,     chars: "\x1bL"                       }
+  - { key: M,        mods: Alt,     chars: "\x1bM"                       }
+  - { key: N,        mods: Alt,     chars: "\x1bN"                       }
+  - { key: O,        mods: Alt,     chars: "\x1bO"                       }
+  - { key: P,        mods: Alt,     chars: "\x1bP"                       }
+  - { key: Q,        mods: Alt,     chars: "\x1bQ"                       }
+  - { key: R,        mods: Alt,     chars: "\x1bR"                       }
+  - { key: S,        mods: Alt,     chars: "\x1bS"                       }
+  - { key: T,        mods: Alt,     chars: "\x1bT"                       }
+  - { key: U,        mods: Alt,     chars: "\x1bU"                       }
+  - { key: V,        mods: Alt,     chars: "\x1bV"                       }
+  - { key: W,        mods: Alt,     chars: "\x1bW"                       }
+  - { key: X,        mods: Alt,     chars: "\x1bX"                       }
+  - { key: Y,        mods: Alt,     chars: "\x1bY"                       }
+  - { key: Z,        mods: Alt,     chars: "\x1bZ"                       }
+  - { key: Key0,     mods: Alt,     chars: "º"                           }
+  - { key: Key1,     mods: Alt,     chars: "¡"                           }
+  - { key: Key2,     mods: Alt,     chars: "€"                           }
+  - { key: Key3,     mods: Alt,     chars: "#"                           }
+  - { key: Key4,     mods: Alt,     chars: "¢"                           }
+  - { key: Key5,     mods: Alt,     chars: "∞"                           }
+  - { key: Key6,     mods: Alt,     chars: "§"                           }
+  - { key: Key7,     mods: Alt,     chars: "¶"                           }
+  - { key: Key8,     mods: Alt,     chars: "•"                           }
+  - { key: Key9,     mods: Alt,     chars: "ª"                           }
+
 live_config_reload: true

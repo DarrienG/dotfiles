@@ -11,6 +11,8 @@ fi
 
 echo "Setting up links"
 mkdir -p ~/.config
+mkdir -p ~/.config/alacritty
+
 # i3
 ln -sfn $DOTFILE_PATH/i3 ~/.config/i3
 ln -sfn $DOTFILE_PATH/i3status ~/.config/i3status
@@ -26,6 +28,7 @@ ln -sfn $DOTFILE_PATH/.myshrc ~/.myshrc
 ln -sfn $DOTFILE_PATH/.osrc ~/.osrc
 ln -sfn $DOTFILE_PATH/.macrc ~/.macrc
 ln -sfn $DOTFILE_PATH/.linuxrc ~/.linuxrc
+ln -sfn $DOTFILE_PATH/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 # Emacs
 ln -sfn $DOTFILE_PATH/.emacs.d ~/.emacs.d

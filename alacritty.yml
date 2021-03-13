@@ -28,6 +28,7 @@ scrolling:
   history: 10000
 
 key_bindings:
+    # macOS needs these in order to properly map Option to META
   - { key: Up,       mods: Alt,     chars: "\x1b[1;5A"                   }
   - { key: Down,     mods: Alt,     chars: "\x1b[1;5B"                   }
   - { key: Left,     mods: Alt,     chars: "\x1bb"                       }
@@ -58,6 +59,12 @@ key_bindings:
   - { key: X,        mods: Alt,     chars: "\x1bx"                       }
   - { key: Y,        mods: Alt,     chars: "\x1by"                       }
   - { key: Z,        mods: Alt,     chars: "\x1bz"                       }
+
+  - { key: H,        mods: Alt|Shift,     chars: "\x1bH"                 }
+  - { key: J,        mods: Alt|Shift,     chars: "\x1bJ"                 }
+  - { key: K,        mods: Alt|Shift,     chars: "\x1bK"                 }
+  - { key: L,        mods: Alt|Shift,     chars: "\x1bL"                 }
+
   - { key: Key0,     mods: Alt,     chars: "º"                           }
   - { key: Key1,     mods: Alt,     chars: "¡"                           }
   - { key: Key2,     mods: Alt,     chars: "€"                           }

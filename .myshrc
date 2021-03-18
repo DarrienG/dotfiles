@@ -88,3 +88,6 @@ TMUX=""
 
 # We aren't working on a 1200 baud modem, the terminal should never freeze
 stty -ixon
+
+# Don't spy on me Google
+export HOMEBREW_NO_ANALYTICS=1

@@ -11,3 +11,6 @@ if [[ $(hostname) == 'BOSMM2YP2N8LVCJ' ]]; then
 else
     . ~/developer/dotfiles/glarrien-heavy.zsh-theme
 fi
+
+# scala time
+export PATH="$PATH:~/Library/Application\ Support/Coursier/bin"

@@ -39,6 +39,7 @@ alias i="idea ."
 # mvn is too damn loud
 alias mvn="mvn -ntp"
 alias mvnd="mvnd -ntp"
+alias mvnc="mvn -Dmaven.skipTests -DskipTests -Dcheckstyle.skip -Dhs-swagger.skip=true -DskipValidation=true test-compile"
 
 # SQL aliases
 alias pgsql="sudo su postgres -c psql"

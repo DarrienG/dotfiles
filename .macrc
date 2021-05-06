@@ -14,3 +14,4 @@ fi
 
 # scala time
 export PATH="$PATH:~/Library/Application\ Support/Coursier/bin"
+alias o="open"

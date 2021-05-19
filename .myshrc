@@ -35,7 +35,7 @@ alias ofd="find . -type d -name "
 alias xclip="xclip -selection clipboard"
 alias style='bash -c  "$(curl -sLo- https://git.io/vQgMr)"'
 alias i="idea ."
-alias ie="idea && exit"
+alias ie="idea . && exit"
 
 # mvn is too damn loud
 alias mvn="mvn -ntp"

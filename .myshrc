@@ -38,8 +38,6 @@ alias i="idea ."
 alias ie="idea . && exit"
 
 # mvn is too damn loud
-alias mvn="mvn -ntp"
-alias mvnd="mvnd -ntp"
 alias mvnc="mvn -Dmaven.skipTests -DskipTests -Dcheckstyle.skip -Dhs-swagger.skip=true -DskipValidation=true test-compile"
 
 # SQL aliases
@@ -66,8 +64,8 @@ alias p3="python3"
 # Extra git aliases
 alias gi="git init"
 alias gs="git status"
-alias gdh="git diff HEAD^"
-alias gdhn="git diff HEAD^ --name-only"
+alias gdh="git diff HEAD~"
+alias gdhn="git diff HEAD~ --name-only"
 alias glr="git pull --rebase"
 alias rebr="git checkout master && git pull --rebase && git checkout - && git rebase -"
 

@@ -1,5 +1,5 @@
 export EDITOR="vim"
-alias pbcopy='xclip -selection clipboard'
+alias -g pbcopy='xclip -selection clipboard'
 
 # Latex
 export PATH=/usr/local/texlive/2020/bin/x86_64-linux:$PATH

@@ -17,7 +17,6 @@ autocmd Filetype yaml setlocal cursorcolumn
 " clang-format likes 2 spaces
 au Filetype c setl sw=2 sts=2 et
 au Filetype c++ setl sw=2 sts=2 et
-au Filetype python setl sw=2 sts=2 et
 
 " Spellchecking and reasonable line limits in texty files
 au Filetype vimwiki,markdown,tex setl tw=80 spell spelllang=en

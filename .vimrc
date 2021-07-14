@@ -92,7 +92,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'tpope/vim-speeddating'
 call plug#end()
 
-colorscheme flattened_light
+colorscheme flattened_dark
 
 " vim-go customizations
 let g:go_fmt_command = "goimports"

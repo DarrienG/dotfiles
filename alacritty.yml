@@ -4,7 +4,7 @@ font:
 colors:
   primary:
     background: '0x002b36'
-    foreground: '0x839496'
+    foreground: '0xfdf6e3'
 
   # Normal colors
   normal:
@@ -19,7 +19,7 @@ colors:
 
   # Bright colors
   bright:
-    black:   '0x002b36'
+    black:   '0xbfbcb2'
     red:     '0xcb4b16'
     green:   '0x586e75'
     yellow:  '0x657b83'

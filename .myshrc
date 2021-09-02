@@ -1,8 +1,5 @@
 # Extra path variables
 export PATH=$PATH:~/bin
-export PATH=$PATH:~/developer/scripts
-# For linuxbrew
-export PATH=/home/linuxbrew/.linuxbrew/sbin:/home/linuxbrew/.linuxbrew/bin:$PATH
 # Sometimes pkg-config is a dingbat
 # May need to change this up on distros that aren't Linux
 export PKG_CONFIG_PATH="/usr/lib64/pkgconfig:/usr/share/pkgconfig"
@@ -23,9 +20,9 @@ export PATH=$PATH:$HOME/.cargo/bin
 export RUSTC_WRAPPER=sccache
 
 # Aliases for common *nix commands
-alias l="exa"
-alias sl="exa"
-alias ls="exa"
+alias l="ls"
+alias sl="ls"
+alias ls="ls"
 alias la="ls -al"
 alias rs="source ~/.zshrc"
 alias vedit="$EDITOR ~/.vimrc"

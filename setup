@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-if [[ $UID != 0 ]]; then
-  echo "Please run this script with sudo:"
-  echo "sudo $0 $*"
-  exit 1
-fi
-
 getPackageManager() {
   UNCLEAN_OS=$(lsb_release -a | grep 'Distributor ID:' | tr '[:upper:]' '[:lower:]')
   if [[ "$UNCLEAN_OS" =~ "ubuntu" || "$UNCLEAN_OS" =~ "debian" ]]; then
@@ -51,7 +45,7 @@ if [[ ! -d "$HOME/developer/scripts" ]]; then
 fi
 
 echo "Setting up git..."
-git config --global user.email "darrienglasser@outlook.com"
+git config --global user.email "darrien@glasser.dev"
 git config --global user.name "DarrienG"
 
 echo "Rocking a Thinkpad? This may be useful"

@@ -8,3 +8,5 @@ export PATH=/usr/local/texlive/2020/bin/x86_64-linux:$PATH
 . /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 . /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 . ~/developer/dotfiles/glarrien-heavy.zsh-theme
+
+export PATH=/home/linuxbrew/.linuxbrew/sbin:/home/linuxbrew/.linuxbrew/bin:$PATH

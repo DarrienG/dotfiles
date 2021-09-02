@@ -1,1 +1,1 @@
-/Users/dglasser/developer/dotfiles/.vimrc
+/Users/darrien/.vimrc

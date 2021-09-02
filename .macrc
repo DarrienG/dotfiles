@@ -1,9 +1,5 @@
 export EDITOR="nvim"
 
-. /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-. '/Users/dglasser/Library/Application Support/zrs/z.sh'
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 if [[ $(hostname) == 'BOSMM2YP2N8LVCJ' ]]; then
     . ~/developer/dotfiles/glarrien-lite.zsh-theme
     . ~/.hubspot/shellrc
@@ -12,6 +8,23 @@ else
     . ~/developer/dotfiles/glarrien-heavy.zsh-theme
 fi
 
-# scala time
-export PATH="$PATH:~/Library/Application\ Support/Coursier/bin"
 alias o="open"
+
+ARCH="$(uname -p)"
+
+if [[ "$ARCH" == "arm" ]]; then
+    export HOMEBREW_PREFIX="/opt/homebrew";
+    export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+    export HOMEBREW_REPOSITORY="/opt/homebrew";
+    export HOMEBREW_SHELLENV_PREFIX="/opt/homebrew";
+    export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
+    export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+    export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
+else
+    export HOMEBREW_PREFIX="/usr/local/homebrew"
+fi
+
+
+. $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+. $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+. '/Users/darrien/Library/Application Support/zrs/z.sh'

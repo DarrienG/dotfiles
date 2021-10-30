@@ -1,12 +1,12 @@
 export EDITOR="nvim"
 
-if [[ $(hostname) == 'BOSMM2YP2N8LVCJ' ]]; then
-    . ~/developer/dotfiles/glarrien-lite.zsh-theme
-    . ~/.hubspot/shellrc
-    alias immutup="mvn -T $(nproc) config:generate com.hubspot.maven.plugins:protoc-bundled-plugin:run"
-else
-    . ~/developer/dotfiles/glarrien-heavy.zsh-theme
-fi
+#if [[ $(hostname) == 'BOSMM2YP2N8LVCJ' ]]; then
+#    . ~/developer/dotfiles/glarrien-lite.zsh-theme
+#    . ~/.hubspot/shellrc
+#    alias immutup="mvn -T $(nproc) config:generate com.hubspot.maven.plugins:protoc-bundled-plugin:run"
+#else
+. ~/developer/dotfiles/glarrien-heavy.zsh-theme
+#fi
 
 alias o="open"
 

@@ -21,4 +21,3 @@ source ~/.myshrc
 bindkey '^Y' autosuggest-accept
 ZSH_AUTOSUGGEST_USE_ASYNC=t
 
-

@@ -92,7 +92,12 @@ Plug 'vimwiki/vimwiki'
 Plug 'tpope/vim-speeddating'
 call plug#end()
 
-colorscheme flattened_dark
+" Keep distinction between work and other machines through color
+if hostname() == "darrien-mbp"
+  colorscheme flattened_light
+else
+  colorscheme flattened_dark
+endif
 
 " vim-go customizations
 let g:go_fmt_command = "goimports"

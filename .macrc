@@ -1,12 +1,8 @@
+# vim: syntax=bash
+
 export EDITOR="nvim"
 
-#if [[ $(hostname) == 'BOSMM2YP2N8LVCJ' ]]; then
-#    . ~/developer/dotfiles/glarrien-lite.zsh-theme
-#    . ~/.hubspot/shellrc
-#    alias immutup="mvn -T $(nproc) config:generate com.hubspot.maven.plugins:protoc-bundled-plugin:run"
-#else
 . ~/developer/dotfiles/glarrien-heavy.zsh-theme
-#fi
 
 alias o="open"
 
@@ -14,16 +10,19 @@ ARCH="$(uname -p)"
 
 if [[ "$ARCH" == "arm" ]]; then
     export HOMEBREW_PREFIX="/opt/homebrew";
-    export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
-    export HOMEBREW_REPOSITORY="/opt/homebrew";
-    export HOMEBREW_SHELLENV_PREFIX="/opt/homebrew";
-    export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
-    export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
-    export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 else
-    export HOMEBREW_PREFIX="/usr/local"
+    # Need a homebrew custom install for this to work. To install, do:
+    # git clone https://github.com/Homebrew/brew $HOME/.homebrew
+    # Afterwards everything will work the same (although everything has to be built from source)
+    export HOMEBREW_PREFIX="$HOME/.homebrew"
 fi
 
+export HOMEBREW_CELLAR="$HOMEBREW_PREFIX/Cellar";
+export HOMEBREW_REPOSITORY="$HOMEBREW_PREFIX";
+export HOMEBREW_SHELLENV_PREFIX="$HOMEBREW_PREFIX";
+export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin${PATH+:$PATH}";
+export MANPATH="$HOMEBREW_PREFIX/share/man${MANPATH+:$MANPATH}:";
+export INFOPATH="$HOMEBREW_PREFIX/share/info:${INFOPATH:-}";
 
 . $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 . $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -2,7 +2,6 @@ unlet! skip_defaults_vim
 
 set nonumber
 syntax on
-set background=light
 set termguicolors       " How the FUCk was this not on before - add true color
 
 filetype plugin indent on
@@ -95,8 +94,13 @@ call plug#end()
 " Keep distinction between work and other machines through color
 if hostname() == "darrien-mbp"
   colorscheme flattened_light
+  set background=light
+elseif hostname() == "darrien-science"
+  colorscheme default
+  set background=dark
 else
   colorscheme flattened_dark
+  set background=dark
 endif
 
 " vim-go customizations

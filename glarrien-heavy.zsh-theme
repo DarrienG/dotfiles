@@ -1,3 +1,5 @@
+# vim: syntax=zsh
+
 autoload -Uz vcs_info
 
 zstyle ':vcs_info:*' stagedstr '%F{green}●'
@@ -15,9 +17,19 @@ theme_precmd () {
     vcs_info
 }
 
+MONIKER=""
+if [[ "$(hostname)" == "darrien-science" ]]; then
+    MONIKER="፨"
+elif [[ "$(hostname)" == "dg-air" ]]; then
+    MONIKER="◉"
+elif [[ "$(hostname)" == "darrien-mbp" ]]; then
+    MONIKER="🜛"
+else
+    MONIKER="??"
+fi
+
 setopt prompt_subst
-PROMPT='%B%F{blue}%c%B%F{green}${vcs_info_msg_0_}%B%F{magenta} %{$reset_color%}% '
+PROMPT='$MONIKER %B%F{blue}%c%B%F{green}${vcs_info_msg_0_}%B%F{magenta} %{$reset_color%}%'
 
 autoload -U add-zsh-hook
 add-zsh-hook precmd  theme_precmd
-

@@ -21,9 +21,9 @@ MONIKER=""
 if [[ "$(hostname)" == "darrien-science" ]]; then
     MONIKER="፨"
 elif [[ "$(hostname)" == "dg-air" ]]; then
-    MONIKER="◉"
-elif [[ "$(hostname)" == "darrien-mbp" ]]; then
     MONIKER="🜛"
+elif [[ "$(hostname)" == "darrien-mbp" ]]; then
+    MONIKER="◉"
 else
     MONIKER="??"
 fi

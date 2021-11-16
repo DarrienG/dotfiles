@@ -96,8 +96,9 @@ if hostname() == "darrien-mbp"
   colorscheme flattened_light
   set background=light
 elseif hostname() == "darrien-science"
-  colorscheme default
+  colorscheme torte
   set background=dark
+  hi CursorLine term=underline cterm=underline
 else
   colorscheme flattened_dark
   set background=dark

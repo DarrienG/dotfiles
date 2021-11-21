@@ -21,7 +21,6 @@ ln -sfn $DOTFILE_PATH/.vim ~/.vim
 ln -sfn $DOTFILE_PATH/.vimrc ~/.vimrc
 ## Note these are "standard locations" in the case I move my dotfiles later
 ln -sfn ~/.vim ~/.config/nvim
-ln -sfn ~/.vimrc ~/.config/nvim/init.vim
 # Zsh
 ln -sfn $DOTFILE_PATH/.zshrc ~/.zshrc
 ln -sfn $DOTFILE_PATH/.myshrc ~/.myshrc
@@ -46,4 +45,6 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   sudo ln -sfn $DOTFILE_PATH/start-lock.sh /usr/local/bin/start-lock.sh
   sudo systemctl enable screenlock.service
   sudo systemctl start screenlock.service
+else
+  ln -sfn ~/.vimrc ~/.config/nvim/init.vim
 fi

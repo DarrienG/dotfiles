@@ -1,1 +1,1 @@
-/home/darrien/.vimrc
+/Users/darrien/.vimrc

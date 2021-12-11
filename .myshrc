@@ -88,3 +88,5 @@ stty -ixon
 
 # Don't spy on me Google
 export HOMEBREW_NO_ANALYTICS=1
+# STOP MAKING NEW THINGS TO IGNORE I SWEAR TO GOD
+export HOMEBREW_NO_ENV_HINTS

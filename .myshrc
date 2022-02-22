@@ -93,6 +93,6 @@ export HOMEBREW_NO_ENV_HINTS=1
 
 # FB
 alias fpull="arc pull && arc focus-android --targets messenger-android"
-alias m4ai="buck install messenger-android"
-alias m4ab="buck build messenger-android"
+alias m4ai="buck install m4a"
+alias m4ab="buck build m4a"
 cda="cd ~/fbsource/fbandroid"

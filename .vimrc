@@ -71,6 +71,7 @@ call plug#begin('~/.vim/plugged')
 
 " Let's try light again :)
 Plug 'romainl/flattened'
+Plug 'morhetz/gruvbox'
 
 " Syntax highlighting and definitions
 Plug 'fatih/vim-go'
@@ -93,14 +94,16 @@ call plug#end()
 
 " Keep distinction between work and other machines through color
 if hostname() == "darrien-mbp"
-  colorscheme flattened_light
+  g:gruvbox_italicize_strings = 1
+  colorscheme gruvbox
   set background=light
 elseif hostname() == "darrien-science"
   colorscheme torte
   set background=dark
   hi CursorLine term=underline cterm=underline
 else
-  colorscheme flattened_dark
+  g:gruvbox_italicize_strings = 1
+  colorscheme gruvbox
   set background=dark
 endif
 

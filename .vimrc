@@ -94,7 +94,7 @@ call plug#end()
 
 " Keep distinction between work and other machines through color
 if hostname() == "darrien-mbp"
-  g:gruvbox_italicize_strings = 1
+  let g:gruvbox_italicize_strings = 1
   colorscheme gruvbox
   set background=light
 elseif hostname() == "darrien-science"
@@ -102,7 +102,7 @@ elseif hostname() == "darrien-science"
   set background=dark
   hi CursorLine term=underline cterm=underline
 else
-  g:gruvbox_italicize_strings = 1
+  let g:gruvbox_italicize_strings = 1
   colorscheme gruvbox
   set background=dark
 endif

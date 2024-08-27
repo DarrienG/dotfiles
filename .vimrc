@@ -71,7 +71,7 @@ call plug#begin('~/.vim/plugged')
 
 " Let's try light again :)
 Plug 'romainl/flattened'
-Plug 'morhetz/gruvbox'
+Plug 'ghifarit53/tokyonight-vim'
 
 " Syntax highlighting and definitions
 Plug 'fatih/vim-go'
@@ -87,23 +87,21 @@ Plug 'tmsvg/pear-tree'
 Plug 'machakann/vim-highlightedyank'
 
 Plug 'vimwiki/vimwiki'
+" CocInstall coc-html to initialize
+Plug 'neoclide/coc-html'
 
 " Dep
 Plug 'tpope/vim-speeddating'
 call plug#end()
 
 " Keep distinction between work and other machines through color
-if hostname() == "darrien-mbp"
-  let g:gruvbox_italicize_strings = 1
-  colorscheme gruvbox
-  set background=light
-elseif hostname() == "darrien-science"
+if hostname() == "darrien-science"
   colorscheme torte
   set background=dark
   hi CursorLine term=underline cterm=underline
 else
   let g:gruvbox_italicize_strings = 1
-  colorscheme gruvbox
+  colorscheme tokyonight
   set background=dark
 endif
 

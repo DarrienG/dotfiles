@@ -12,6 +12,9 @@ export PATH=$PATH:$GOROOT/bin
 export GO111MODULE=on
 export CGO_ENABLED=0
 
+# latex - need to update on a yearly basis
+export PATH="$PATH:/usr/local/texlive/2026/bin/universal-darwin"
+
 # Pip user dirs
 export PATH=$PATH:~/.local/bin
 
@@ -47,11 +50,6 @@ alias vi="$EDITOR"
 alias vim="$EDITOR"
 
 alias kts="kotlinc -script"
-
-# Linux specific
-# bt restart
-alias poweroff="systemctl poweroff"
-alias bsr="sudo /etc/init.d/bluetooth restart"
 
 # Program aliases
 alias python="python3"

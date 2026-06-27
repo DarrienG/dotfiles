@@ -23,6 +23,7 @@ export HOMEBREW_SHELLENV_PREFIX="$HOMEBREW_PREFIX";
 export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin${PATH+:$PATH}";
 export MANPATH="$HOMEBREW_PREFIX/share/man${MANPATH+:$MANPATH}:";
 export INFOPATH="$HOMEBREW_PREFIX/share/info:${INFOPATH:-}";
+alias poweroff="shutdown -h now"
 
 . $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 . $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

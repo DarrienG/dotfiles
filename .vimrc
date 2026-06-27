@@ -80,7 +80,7 @@ let g:polyglot_disabled = ['go']
 Plug 'rust-lang/rust.vim'
 
 " IDE like improvements
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " QOL Vim-wide editor improvements
 Plug 'tmsvg/pear-tree'
@@ -140,9 +140,6 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Mappings for CoCList
 " Show all diagnostics.

@@ -94,3 +94,6 @@ alias fpull="arc pull && arc focus-android --targets messenger-android"
 alias m4ai="buck install m4a"
 alias m4ab="buck build m4a"
 cda="cd ~/fbsource/fbandroid"
+
+# surreal db
+PATH=/home/darrien/.surrealdb:$PATH

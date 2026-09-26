@@ -28,3 +28,6 @@ alias poweroff="sudo shutdown -h now"
 . $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 . $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 . '/Users/darrien/Library/Application Support/zrs/z.sh'
+
+# opencode
+export PATH=/Users/darrien/.opencode/bin:$PATH
